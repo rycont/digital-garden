@@ -1,0 +1,26 @@
+# build output
+builder/dist/
+
+# generated types
+builder/.astro/
+
+# dependencies
+builder/node_modules/
+
+# logs
+builder/npm-debug.log*
+builder/yarn-debug.log*
+builder/yarn-error.log*
+builder/pnpm-debug.log*
+
+# environment variables
+builder/.env
+builder/.env.production
+
+# macOS-specific files
+builder/.DS_Store
+
+# jetbrains setting folder
+builder/.idea/
+
+.vscode/

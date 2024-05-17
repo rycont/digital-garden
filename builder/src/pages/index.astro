@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/article.astro";
+
+interface Article {
+  url: string;
+  title: string;
+  content: string;
+}
+
+const articleFiles = await Astro.glob("./*.{md,astro}");
+const articles: Article[] = articleFiles.map((file) => ({
+  url: file.url,
+  title: file.frontmatter.title || file.url.slice(1),
+  content: file.compiledContent(),
+}));
+
+const bidirectionalLinkingArticles = buildGraphFromArticles(articles);
+
+function buildGraphFromArticles(articles: Article[]) {
+  const articlesWithLink = articles.map((article) => ({
+    url: article.url,
+    title: article.title,
+    links: extractLinksFromHTML(article.content),
+  }));
+
+  const articlesWithMentionedLinks = articlesWithLink.map((article) => ({
+    ...article,
+    mentionedIn: articlesWithLink
+      .filter((otherArticle) =>
+        otherArticle.links.includes(article.url.slice(1))
+      )
+      .map((otherArticle) => otherArticle.url),
+  }));
+
+  return articlesWithMentionedLinks;
+}
+
+function extractLinksFromHTML(html: string) {
+  const linkTags = html.match(/<a href="(.+?)">/g);
+  if (!linkTags) return [];
+
+  const linkTargets = linkTags
+    .map((link) => link.match(/<a href="(.+?)"/)?.[1])
+    .filter(Boolean) as string[];
+
+  const decodedLinkTargets = linkTargets.map((link) => decodeURI(link));
+  return decodedLinkTargets;
+}
+
+const sortedWithMentionedLinks = bidirectionalLinkingArticles.sort(
+  (a, b) => b.mentionedIn.length - a.mentionedIn.length
+);
+---
+
+<Layout>
+  <h2>모든 글</h2>
+
+  <p>다른 글에서 링크된 횟수를 기준으로 정렬했습니다</p>
+
+  <ul>
+    {
+      sortedWithMentionedLinks.map((article) => (
+        <li>
+          <a href={article.url}>{article.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

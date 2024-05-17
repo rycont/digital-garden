@@ -1,0 +1,61 @@
+---
+const { title } = Astro.props?.content || Astro.props;
+const documentTitle = title ? `${title} | Rycont Garden` : "Rycont Garden";
+import LinkedPages from "../components/linked-pages.astro";
+---
+
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{documentTitle}</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/static/woff2/SUIT.css"
+      rel="stylesheet"
+    />
+    <style is:global>
+      @font-face {
+        font-family: "D2Coding";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        font-family: "SUIT", sans-serif;
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .astro-code {
+        padding: 1rem;
+        font-size: 0.8rem;
+        border-radius: 0.2rem;
+      }
+
+      .astro-code code {
+        font-family: "D2Coding", monospace;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/">Home</a>
+    </header>
+    <hr />
+    <article>
+      <slot />
+    </article>
+    <hr />
+    <LinkedPages />
+  </body>
+</html>

@@ -1,0 +1,39 @@
+---
+let allPages = await Astro.glob("../pages/**/*.{md,mdx}");
+
+let currentPath = trimSlash(Astro.url.pathname);
+
+function trimSlash(path: string) {
+  return path.replace(/^\/|\/$/g, "");
+}
+
+const linkedPages = allPages.filter((page) => {
+  const compiledContent = page.compiledContent();
+
+  return (
+    page.url !== currentPath &&
+    compiledContent.includes(`href="${currentPath}"`)
+  );
+});
+
+const links = linkedPages.map((page) => ({
+  url: "/" + page.url,
+  title: page.frontmatter.title || page.url,
+}));
+---
+
+<h2>연결된 페이지 (Backlinks)</h2>
+
+{
+  links.length === 0 ? (
+    <p>연결된 페이지가 없습니다.</p>
+  ) : (
+    <ul>
+      {links.map((link) => (
+        <li>
+          <a href={link.url}>{link.title}</a>
+        </li>
+      ))}
+    </ul>
+  )
+}
