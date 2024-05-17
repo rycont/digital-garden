@@ -9,7 +9,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "build-deploy": "cp ../*.md ./src/pages && astro build"
+    "build-deploy": "cp ../*.md ./src/pages && cp -r ../images ./src/images && astro build"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
@@ -19,6 +19,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20.12.12"
+    "@types/node": "^20.12.12",
+    "sharp": "^0.33.4"
   }
 }
