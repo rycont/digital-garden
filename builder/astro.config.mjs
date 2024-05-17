@@ -21,6 +21,10 @@ function makeLinkTitle() {
             value: node.url,
           },
         ];
+
+        if(!node.url.includes("/")) {
+            node.url = "/" + node.url;
+        }
       }
     });
   };
