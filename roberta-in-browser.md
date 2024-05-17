@@ -6,7 +6,7 @@ date: 2024-04-02T07:19:54.046Z
 
 # 브라우저에서 RoBERTa 실행해보기
 
-RoBERTa를 사용하면 텍스트 분류, 검색, 특징 탐지과 같은 기능을 구현할 수 있습니다. 기술의 발전으로 인해 가벼운 언어모델들은 브라우저에서 직접 실행할 수 있게 됐습니다.
+[](RoBERTa)를 사용하면 텍스트 분류, 검색, 특징 탐지과 같은 기능을 구현할 수 있습니다. 기술의 발전으로 인해 가벼운 [](언어모델)들은 [](브라우저)에서 직접 실행할 수 있게 됐습니다.
 
 > 이렇게 인공지능 모델을 사용자 디바이스에서 직접 실행하는 기술을 **온디바이스 AI(On-device AI)**라고 합니다.
 >
@@ -14,13 +14,13 @@ RoBERTa를 사용하면 텍스트 분류, 검색, 특징 탐지과 같은 기능
 
 ### Transformers.js
 
-자바스크립트 런타임에서 Transformers 언어모델을 실행할 수 있게 하는 라이브러리입니다. 특히 브라우저에서도 실행이 가능합니다. 이 라이브러리를 사용해서 구현할 예정입니다. Transformers.js 라이브러리는 ONNX 포맷으로 저장된 모델을 로드할 수 있습니다.
+자바스크립트 런타임에서 [](Transformer) 언어모델을 실행할 수 있게 하는 라이브러리입니다. 특히 브라우저에서도 실행이 가능합니다. 이 라이브러리를 사용해서 구현할 예정입니다. Transformers.js 라이브러리는 [](ONNX) 포맷으로 저장된 모델을 로드할 수 있습니다.
 
 하지만 대부분의 언어 모델은 pth(PyTorch), h5(TensorFlow), safetensors(SafeTensors)로 배포됩니다. 그렇기에 ONNX로 변환을 해야 Transformers.js에서 사용할 수 있습니다.
 
 ### Transformers 모델을 브라우저가 이해할 수 있도록 PyTorch ONNX로 변환하기
 
-시범으로 [leewaay/klue-roberta-base-klueNLI-klueSTS-MSL128](https://huggingface.co/leewaay/klue-roberta-base-klueNLI-klueSTS-MSL128) 모델을 변환해보겠습니다. Huggingface의 Optimum이라는 라이브러리를 사용하면 손쉽게 변환할 수 있습니다.
+시범으로 [leewaay/klue-roberta-base-klueNLI-klueSTS-MSL128](https://huggingface.co/leewaay/klue-roberta-base-klueNLI-klueSTS-MSL128) 모델을 변환해보겠습니다. [](Huggingface)의 Optimum이라는 라이브러리를 사용하면 손쉽게 변환할 수 있습니다.
 
 먼저 필요한 라이브러리를 설치해주겠습니다.
 
@@ -64,9 +64,9 @@ tokenizer.save_pretrained(save_directory)
 
 ### (선택) 양자화로 모델 크기 줄이기
 
-400MB는 앱의 일부로 배포하기에는 부담스러운 크기입니다. 모델의 크기도 줄이고 추론 속도도 높히려면 양자화를 수행할 수 있습니다. 다음 코드로 모델을 양자화할 수 있습니다.
+400MB는 앱의 일부로 배포하기에는 부담스러운 크기입니다. 모델의 크기도 줄이고 추론 속도도 높히려면 [](양자화)를 수행할 수 있습니다. 다음 코드로 모델을 양자화할 수 있습니다.
 
-> **같이 보기:** [**딥러닝 모델 쉽게 양자화하기**](https://tilnote.io/pages/648270b010b2b51d62a76af0)
+> **같이 보기:** [**딥러닝 모델 쉽게 양자화하기**](easy-quantization)
 >
 > 양자화는 딥러닝 모델을 경량화하는 방법중 하나입니다. Huggingface의 transformers 라이브러리가 제공하는 툴킷을 사용하면 Huggingface에 업로드된 모델을 간편하게 양자화할 수 있습니다...
 

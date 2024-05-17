@@ -6,11 +6,11 @@ date: 2023-06-07T15:50:22.962Z
 
 # Knowledge Distillation
 
-딥러닝 모델을 압축하는 방법은 Pruning(가지치기), Weight Sharing(가중치 공유), Knowledge Distillation(지식 증류) 등 여러가지가 있습니다. 그중 본 보고서에서는 Knowledge Distillation을 통해 모델을 압축해보고자 합니다.
+딥러닝 모델을 압축하는 방법은 Pruning(가지치기), Weight Sharing(가중치 공유), (Knowledge Distillation)[Distillation](지식 증류) 등 여러가지가 있습니다. 그중 본 보고서에서는 Knowledge Distillation을 통해 모델을 압축해보고자 합니다.
 
 #### **Knowledge Distillation이란?**
 
-Knowledge Distillation은 큰 모델을 모사하는 작은 모델을 만들어내는 압축 기법입니다. 여기서의 큰 모델을 Teacher, 작은 모델을 Student라고 합니다. GPT 모델을 학습하는 방법을 통해 Distillation을 설명해보겠습니다. GPT는 입력 시퀀스가 주어졌을 때 바로 다음 단어로 올 단어들의 확률을 맞추는 방법으로 학습을 합니다. GPT를 학습시킬 때의 입력값은 토큰의 시퀀스이고, 예측할 출력값은 다음에 올 단어의 One-hot Vector입니다.
+Knowledge Distillation은 큰 모델을 모사하는 작은 모델을 만들어내는 압축 기법입니다. 여기서의 큰 모델을 Teacher, 작은 모델을 Student라고 합니다. [](GPT) 모델을 학습하는 방법을 통해 Distillation을 설명해보겠습니다. GPT는 입력 시퀀스가 주어졌을 때 바로 다음 단어로 올 단어들의 확률을 맞추는 방법으로 학습을 합니다. GPT를 학습시킬 때의 입력값은 [](토큰)의 시퀀스이고, 예측할 출력값은 다음에 올 단어의 One-hot Vector입니다.
 
 ![](../images/97b6df46-4655-4e1f-9b1e-10b3a1a97ef1.png)
 
@@ -28,7 +28,7 @@ Teacher 모델의 출력을 Student에 학습시키기 위해서는, Teacher 모
 
 ![](../images/ed824def-63aa-4a01-843a-462e2fe9f483.png)
 
-위 모습은 한국어 GPT의 출력값중 상위 확률 10개에 Softmax를 실행한 결과입니다. “아까 밥 먹고” 뒤에 “나서”가 가장 높은 확률로 나타나지만, “나”, “난”, “싶”과 같이 실제로 올법한 단어들을 제대로 예측하였습니다. 위와 같이 적절하게 확률이 분포되어있다면 Student 모델이 잘 학습할 수 있을 것 같지만, 안타깝게도 실제 결과값은 위와 다릅니다.
+위 모습은 [](한국어) GPT의 출력값중 상위 확률 10개에 Softmax를 실행한 결과입니다. “아까 밥 먹고” 뒤에 “나서”가 가장 높은 확률로 나타나지만, “나”, “난”, “싶”과 같이 실제로 올법한 단어들을 제대로 예측하였습니다. 위와 같이 적절하게 확률이 분포되어있다면 Student 모델이 잘 학습할 수 있을 것 같지만, 안타깝게도 실제 결과값은 위와 다릅니다.
 
 ![](../images/125dc2d8-c63c-4001-9c82-882fb22f6b6d.png)
 
@@ -46,7 +46,7 @@ Teacher 모델의 출력을 Student에 학습시키기 위해서는, Teacher 모
 
 ##### **DistilBERT**
 
-구글의 bert-base에서 레이어 수를 절반으로 줄이고 Pooling layer를 제거하여 Student 모델을 만들었습니다. 학습할 때에는 위에서 언급한 L1, L2에 더해 Student과 Teacher의 마지막 Hidden state도 Cosine embedding loss를 계산하여 추가적인 성능 향상을 이끌었습니다. BERT에 비해 크기는 40% 줄였지만(440mb → 268mb), 성능은 97%로 유지하였습니다.
+구글의 [](bert)-base에서 레이어 수를 절반으로 줄이고 Pooling layer를 제거하여 Student 모델을 만들었습니다. 학습할 때에는 위에서 언급한 L1, L2에 더해 Student과 Teacher의 마지막 Hidden state도 Cosine embedding loss를 계산하여 추가적인 성능 향상을 이끌었습니다. BERT에 비해 크기는 40% 줄였지만(440mb → 268mb), 성능은 97%로 유지하였습니다.
 
 - DistilBERT의 방법론을 한국어 BERT(skt/KoBERT)에 적용하여 만든 DistilKoBERT도 있습니다.
 

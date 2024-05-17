@@ -3,9 +3,10 @@ title: 런타임 작성하기
 layout: ../layouts/article.astro
 date: 2023-12-12T02:14:22.030Z
 ---
+
 # 런타임 작성하기
 
-런타임은 토크나이저, 렉서, 파서를 거쳐서 만들어진 AST를 실행하는 역할을 합니다. 런타임은 AST를 순회하면서 각 노드를 실행합니다. 런타임을 구현하는데는 여러 방법이 있지만, 이 튜토리얼에서는 **분할정복(Divide and Conquer)** 방식을 사용합니다.
+런타임은 [](토크나이저), [](렉서), [](파서)를 거쳐서 만들어진 AST를 실행하는 역할을 합니다. 런타임은 AST를 순회하면서 각 노드를 실행합니다. 런타임을 구현하는데는 여러 방법이 있지만, 이 튜토리얼에서는 **분할정복(Divide and Conquer)** 방식을 사용합니다.
 
 AST는 언뜻 보면 복잡해보이지만, 각 노드만 떼어서 보면 간단한 연산입니다. 예를 들어, 다음과 같은 AST가 있다고 가정해보겠습니다.
 
@@ -21,39 +22,39 @@ AST는 언뜻 보면 복잡해보이지만, 각 노드만 떼어서 보면 간�
 ]
 ```
 
-* `Print` 노드는 `value`의 값을 출력합니다
+- `Print` 노드는 `value`의 값을 출력합니다
 
-* `BinaryCalculation` 노드는 `operator`의 연산자로 `left`와 `right`를 계산합니다
+- `BinaryCalculation` 노드는 `operator`의 연산자로 `left`와 `right`를 계산합니다
 
-* `AdditionOperator`는 두 값을 더하는 연산을 제공합니다
+- `AdditionOperator`는 두 값을 더하는 연산을 제공합니다
 
 각 노드의 동작만 제대로 정의해주고, 런타임은 각 노드를 순회하면서 동작을 실행하면 됩니다.
 
 앞에서 보았다시피, 각 노드를 클래스로 정의하였습니다. 그리고 그 상속 관계는 다음과 같습니다.
 
-* Token
+- Token
 
-  * Executable
+  - Executable
 
-    * Evaluable
+    - Evaluable
 
-      * NumberValue
+      - NumberValue
 
-      * StringValue
+      - StringValue
 
-      * Variable
+      - Variable
 
-      * BinaryCalculation
+      - BinaryCalculation
 
-    * SetVariable
+    - SetVariable
 
-    * Print
+    - Print
 
-  * Operator
+  - Operator
 
-  * Keyword
+  - Keyword
 
-  * LineBreak
+  - LineBreak
 
 이제 각 노드의 동작을 정의해보겠습니다.
 
@@ -63,9 +64,9 @@ AST는 언뜻 보면 복잡해보이지만, 각 노드만 떼어서 보면 간�
 
 ```javascript
 class Token {
-	constructor(value) {
-		this.value = value
-	}
+  constructor(value) {
+    this.value = value;
+  }
 }
 ```
 
@@ -77,7 +78,7 @@ class Token {
 
 ```javascript
 class Executable extends Token {
-	execute() {}
+  execute() {}
 }
 ```
 
@@ -89,12 +90,12 @@ class Executable extends Token {
 
 ```javascript
 class Evaluable extends Executable {
-	eval() {
-		// 계산 결과를 반환합니다
-	}
-	execute() {
-		this.eval()
-	}
+  eval() {
+    // 계산 결과를 반환합니다
+  }
+  execute() {
+    this.eval();
+  }
 }
 ```
 
@@ -104,9 +105,9 @@ class Evaluable extends Executable {
 
 ```javascript
 class NumberValue extends Evaluable {
-	eval() {
-		return this
-	}
+  eval() {
+    return this;
+  }
 }
 ```
 
@@ -160,23 +161,23 @@ class LineBreak extends Token {}
 
 ```javascript
 class BinaryCalculation extends Evaluable {
-	constructor(left, operator, right) {
-		// 파싱의 과정에서 left, operator, right의 순서로 자식 노드가 constructor에 전달됩니다
-		super()
+  constructor(left, operator, right) {
+    // 파싱의 과정에서 left, operator, right의 순서로 자식 노드가 constructor에 전달됩니다
+    super();
 
-		// property에 저장해둡니다
-		this.left = left
-		this.operator = operator
-		this.right = right
-	}
-	eval() {
-		// left와 right의 값을 계산합니다
-		const left = this.left.eval()
-		const right = this.right.eval()
+    // property에 저장해둡니다
+    this.left = left;
+    this.operator = operator;
+    this.right = right;
+  }
+  eval() {
+    // left와 right의 값을 계산합니다
+    const left = this.left.eval();
+    const right = this.right.eval();
 
-		// operator의 calculate 메서드를 호출합니다
-		return this.operator.calculate(left, right)
-	}
+    // operator의 calculate 메서드를 호출합니다
+    return this.operator.calculate(left, right);
+  }
 }
 ```
 
@@ -184,16 +185,16 @@ class BinaryCalculation extends Evaluable {
 
 ```javascript
 class SetVariable extends Executable {
-	constructor(name, value) {
-		super()
-		this.name = name
-		this.value = value
-	}
+  constructor(name, value) {
+    super();
+    this.name = name;
+    this.value = value;
+  }
 
-	execute() {
-		const value = this.value.eval()
-		// 엥? 값을 일단 계산하긴 했는데, 어디에 저장해야 할까요?
-	}
+  execute() {
+    const value = this.value.eval();
+    // 엥? 값을 일단 계산하긴 했는데, 어디에 저장해야 할까요?
+  }
 }
 ```
 
@@ -203,14 +204,14 @@ class SetVariable extends Executable {
 
 스코프는 변수를 저장하는 공간입니다. 스코프는 두 가지 기능을 제공합니다.
 
-* 변수를 저장합니다
+- 변수를 저장합니다
 
-* 변수를 참조합니다
+- 변수를 참조합니다
 
 간단하게 Map으로 구현하겠습니다.
 
 ```javascript
-const scope = new Map()
+const scope = new Map();
 ```
 
 스코프의 구현은 위가 끝입니다.
@@ -221,16 +222,16 @@ const scope = new Map()
 
 ```javascript
 class SetVariable extends Executable {
-	constructor(name, value) {
-		super()
-		this.name = name
-		this.value = value
-	}
+  constructor(name, value) {
+    super();
+    this.name = name;
+    this.value = value;
+  }
 
-	execute(scope) {
-		const value = this.value.eval()
-		scope.set(this.name, value)
-	}
+  execute(scope) {
+    const value = this.value.eval();
+    scope.set(this.name, value);
+  }
 }
 ```
 
@@ -242,14 +243,14 @@ class SetVariable extends Executable {
 
 ```javascript
 class Variable extends Evaluable {
-	constructor(name) {
-		super()
-		this.name = name
-	}
+  constructor(name) {
+    super();
+    this.name = name;
+  }
 
-	eval(scope) {
-		return scope.get(this.name)
-	}
+  eval(scope) {
+    return scope.get(this.name);
+  }
 }
 ```
 
@@ -259,15 +260,15 @@ class Variable extends Evaluable {
 
 ```javascript
 class Print extends Executable {
-	constructor(value) {
-		super()
-		this.value = value
-	}
+  constructor(value) {
+    super();
+    this.value = value;
+  }
 
-	execute(scope) {
-		const value = this.value.eval(scope)
-		console.log(value)
-	}
+  execute(scope) {
+    const value = this.value.eval(scope);
+    console.log(value);
+  }
 }
 ```
 

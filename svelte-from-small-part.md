@@ -3,13 +3,14 @@ title: 프레임워크 없이 만든 프론트엔드에 작은 부분부터 Svel
 layout: ../layouts/article.astro
 date: 2024-04-12T05:49:13.793Z
 ---
+
 # 프레임워크 없이 만든 프론트엔드에 작은 부분부터 Svelte 도입하기
 
 ## 들어가며
 
-프론트엔드 개발을 프레임워크 없이 구현하다 보면, 복잡한 UI와 데이터 흐름을 관리하기 어려워지는 경우가 많습니다. 이럴 때 프레임워크를 도입하는 것이 좋지만, 기존 프로젝트 전체를 재작성하기에는 큰 부담이 될 수 있습니다.
+[](프론트엔드) 개발을 [](프레임워크) 없이 구현하다 보면, 복잡한 [](UI)와 데이터 흐름을 관리하기 어려워지는 경우가 많습니다. 이럴 때 프레임워크를 도입하는 것이 좋지만, 기존 프로젝트 전체를 재작성하기에는 큰 부담이 될 수 있습니다.
 
-이번 글에서는 프레임워크 없이 작성된 프론트엔드에 Svelte를 점진적으로 도입하는 방법에 대해 다루어 보겠습니다. Svelte는 WebComponent 호환을 지원하므로, 기존 프로젝트 구조에 큰 변화 없이 컴포넌트를 점진적으로 적용할 수 있습니다.
+이번 글에서는 프레임워크 없이 작성된 프론트엔드에 Svelte를 점진적으로 도입하는 방법에 대해 다루어 보겠습니다. [](Svelte)는 [](WebComponent) 호환을 지원하므로, 기존 프로젝트 구조에 큰 변화 없이 컴포넌트를 점진적으로 적용할 수 있습니다.
 
 ## 사전 준비
 
@@ -33,10 +34,10 @@ date: 2024-04-12T05:49:13.793Z
     <button class="say-name" data-name="재우">이름 말하기</button>
     <button class="say-name" data-name="수열">이름 말하기</button>
     <script>
-      const sayNames = document.getElementsByClassName('say-name');
+      const sayNames = document.getElementsByClassName("say-name");
       for (const button of sayNames) {
-        button.addEventListener('click', () => {
-          alert(button.getAttribute('data-name'));
+        button.addEventListener("click", () => {
+          alert(button.getAttribute("data-name"));
         });
       }
     </script>
@@ -46,12 +47,12 @@ date: 2024-04-12T05:49:13.793Z
 
 ### Vite 설치하기
 
-Vite는 프론트엔드 개발 및 빌드 도구로, Svelte 컴포넌트를 쉽게 통합할 수 있습니다. Vite는 빠른 빌드 속도와 다양한 플러그인을 제공합니다.
+[](Vite)는 프론트엔드 개발 및 빌드 도구로, Svelte 컴포넌트를 쉽게 통합할 수 있습니다. Vite는 빠른 빌드 속도와 다양한 플러그인을 제공합니다.
 
 필요한 라이브러리를 설치합니다:
 
 ```javascript
-pnpm add -D vite @sveltejs/vite-plugin-svelte svelte glob 
+pnpm add -D vite @sveltejs/vite-plugin-svelte svelte glob
 ```
 
 #### 설정
@@ -72,36 +73,36 @@ package.json의 type 속성을 module로 설정합니다
 vite.config.ts 파일을 만들고 다음과 같이 설정합니다
 
 ```javascript
-import { svelte, vitePreprocess } from '@sveltejs/vite-plugin-svelte'
-import { defineConfig } from 'vite'
-import { resolve } from 'path'
-import { glob } from 'glob'
+import { svelte, vitePreprocess } from "@sveltejs/vite-plugin-svelte";
+import { defineConfig } from "vite";
+import { resolve } from "path";
+import { glob } from "glob";
 
-const pages = await glob('**/*.html', {
-    ignore: ['node_modules/**', 'dist/**'],
-})
+const pages = await glob("**/*.html", {
+  ignore: ["node_modules/**", "dist/**"],
+});
 
 const entryPoint = Object.fromEntries(
-    pages.map((path) => [path, resolve(__dirname, path)])
-)
+  pages.map((path) => [path, resolve(__dirname, path)])
+);
 
 export default defineConfig({
-    appType: 'mpa',
-    build: {
-        target: 'ESNext',
-        rollupOptions: {
-            input: entryPoint,
-        },
+  appType: "mpa",
+  build: {
+    target: "ESNext",
+    rollupOptions: {
+      input: entryPoint,
     },
-    plugins: [
-        svelte({
-            preprocess: vitePreprocess(),
-            compilerOptions: {
-                customElement: true,
-            },
-        }),
-    ],
-})
+  },
+  plugins: [
+    svelte({
+      preprocess: vitePreprocess(),
+      compilerOptions: {
+        customElement: true,
+      },
+    }),
+  ],
+});
 ```
 
 이제 Vite와 Svelte 설정이 완료되었습니다!
@@ -139,7 +140,7 @@ export default defineConfig({
 
 ```html
 <script type="module" src="./say-name-button.svelte"></script>
-<say-name-button name="소희">
+<say-name-button name="소희"></say-name-button>
 ```
 
 이렇게 Svelte 컴포넌트를 점진적으로 도입하면, 기존 프로젝트 구조를 크게 변경하지 않으면서도 프레임워크의 장점을 활용할 수 있습니다.

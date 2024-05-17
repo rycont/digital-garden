@@ -3,6 +3,7 @@ title: PostgreSQL에서 INSERT 할 때만 Computed 되는 Field 구현하기
 layout: ../layouts/article.astro
 date: 2023-06-06T04:32:10.702Z
 ---
+
 # PostgreSQL에서 INSERT 할 때만 Computed 되는 Field 구현하기
 
 이런 필드를 원했다
@@ -15,7 +16,7 @@ date: 2023-06-06T04:32:10.702Z
 
 #### **GENERATED 필드**
 
-PostgreSQL에는 필드에 GENERATED라는 속성을 적용할 수 있다. 이는 일반적인 computed field와 동일한 개념으로, 레코드의 다른 필드를 참조해서 새로운 값을 계산할 수 있다. 코드로는 다음과 같이 표현된다.
+[](PostgreSQL)에는 필드에 GENERATED라는 속성을 적용할 수 있다. 이는 일반적인 computed field와 동일한 개념으로, 레코드의 다른 필드를 참조해서 새로운 값을 계산할 수 있다. 코드로는 다음과 같이 표현된다.
 
 ```javascript
 CREATE TABLE Books (
@@ -33,7 +34,7 @@ SELECT * FROM Books;
 ```
 
 ```javascript
- id |   name   |   nice_name   
+ id |   name   |   nice_name
 ----+----------+---------------
   1 | business | NICE business
 (1 row)
@@ -78,7 +79,7 @@ SELECT * FROM Books;
 ```
 
 ```javascript
- id |   name   |    nice_name     
+ id |   name   |    nice_name
 ----+----------+------------------
   1 | business | economy is fancy
 (1 row)
