@@ -61,7 +61,9 @@ const sortedWithMentionedLinks = bidirectionalLinkingArticles.sort(
     {
       sortedWithMentionedLinks.map((article) => (
         <li>
-          <a href={article.url}>{article.title}</a>
+          <a href={article.url}>
+            ({article.mentionedIn.length}회) {article.title}
+          </a>
         </li>
       ))
     }
