@@ -17,7 +17,7 @@ const linkedPages = allPages.filter((page) => {
 });
 
 const links = linkedPages.map((page) => ({
-  url: "/" + page.url,
+  url: page.url,
   title: page.frontmatter.title || page.url,
 }));
 ---
