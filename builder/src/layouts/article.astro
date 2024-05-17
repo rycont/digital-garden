@@ -28,6 +28,8 @@ import LinkedPages from "../components/linked-pages.astro";
         margin: 0 auto;
         line-height: 1.5;
         padding: 1rem;
+        word-break: keep-all;
+        text-align: justify;
       }
 
       article * {
@@ -55,6 +57,13 @@ import LinkedPages from "../components/linked-pages.astro";
       h3 {
         font-size: 1.1rem;
       }
+
+      blockquote {
+        padding: 0.1rem 1rem;
+        background-color: #f9f9f9;
+        border-left: 0.25rem solid #ccc;
+        margin: 1rem 0;
+      }
     </style>
   </head>
   <body>
@@ -67,5 +76,20 @@ import LinkedPages from "../components/linked-pages.astro";
     </article>
     <hr />
     <LinkedPages />
+    <hr />
+    <footer>
+      <ul>
+        <li>Author: Rycont</li>
+        <li>Mail: <a href="mailto:rycont@outlook.kr">rycont@outlook.kr</a></li>
+        <li><a href="https://github.com/rycont">GitHub</a></li>
+      </ul>
+
+      <p>
+        이 사람은 대한민국 해군에 복무중입니다! <a
+          href="https://www.navy.mil.kr/mbshome/mbs/navy/index.do"
+          target="_blank">지금 바로 해군 지원하기</a
+        >
+      </p>
+    </footer>
   </body>
 </html>
