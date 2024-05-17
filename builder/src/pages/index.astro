@@ -1,4 +1,5 @@
 ---
+import { writeFile } from "fs/promises";
 import Layout from "../layouts/article.astro";
 
 interface Article {
@@ -9,7 +10,7 @@ interface Article {
 
 const articleFiles = await Astro.glob("./*.{md,astro}");
 const articles: Article[] = articleFiles.map((file) => ({
-  url: file.url,
+  url: file.url.slice(1),
   title: file.frontmatter.title || file.url.slice(1),
   content: file.compiledContent(),
 }));
@@ -18,24 +19,52 @@ const bidirectionalLinkingArticles = buildGraphFromArticles(articles);
 
 function buildGraphFromArticles(articles: Article[]) {
   const articlesWithLink = articles.map((article) => ({
-    url: article.url,
-    title: article.title,
-    links: extractLinksFromHTML(article.content),
-  }));
-
-  const articlesWithMentionedLinks = articlesWithLink.map((article) => ({
     ...article,
-    mentionedIn: articlesWithLink
-      .filter((otherArticle) =>
-        otherArticle.links.includes(article.url.slice(1))
-      )
-      .map((otherArticle) => otherArticle.url),
+    links: extractInternalLinksFromHTML(article.content),
   }));
 
-  return articlesWithMentionedLinks;
+  const targets = articlesWithLink.flatMap((article) => article.links);
+  const uniqueTargets = [...new Set(targets)];
+
+  const linkedWithTargets = uniqueTargets.map((target) =>
+    getArticleByLinkTargetURL(articlesWithLink, target)
+  );
+
+  return linkedWithTargets;
 }
 
-function extractLinksFromHTML(html: string) {
+function getArticleByLinkTargetURL(
+  articles: (Article & {
+    links: string[];
+  })[],
+  url: string
+) {
+  const targetArticle = articles.find((article) => article.url === url);
+  const mentionedIn = articles.filter((article) => article.links.includes(url));
+
+  if (!targetArticle) {
+    writeFile(
+      `./src/pages/${url}.md`,
+      `---
+title: ${url}
+layout: ../layouts/article.astro
+---
+
+# ${url}
+
+아직 작성되지 않은 글입니다.
+`
+    );
+  }
+
+  return {
+    title: targetArticle?.title || url,
+    url,
+    mentionedIn,
+  };
+}
+
+function extractInternalLinksFromHTML(html: string) {
   const linkTags = html.match(/<a href="(.+?)">/g);
   if (!linkTags) return [];
 
@@ -44,7 +73,11 @@ function extractLinksFromHTML(html: string) {
     .filter(Boolean) as string[];
 
   const decodedLinkTargets = linkTargets.map((link) => decodeURI(link));
-  return decodedLinkTargets;
+  const internalLinkTargets = decodedLinkTargets.filter(
+    (link) => !link.includes(":")
+  );
+
+  return internalLinkTargets;
 }
 
 const sortedWithMentionedLinks = bidirectionalLinkingArticles.sort(
@@ -61,7 +94,7 @@ const sortedWithMentionedLinks = bidirectionalLinkingArticles.sort(
     {
       sortedWithMentionedLinks.map((article) => (
         <li>
-          <a href={article.url}>
+          <a href={"/" + article.url}>
             ({article.mentionedIn.length}회) {article.title}
           </a>
         </li>
