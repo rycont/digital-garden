@@ -24,3 +24,4 @@ builder/.DS_Store
 builder/.idea/
 
 .vscode/
+builder/src/pages/*.md
