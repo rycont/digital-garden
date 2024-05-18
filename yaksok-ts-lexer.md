@@ -126,4 +126,4 @@ date: 2023-12-12T02:10:51.794Z
 
 스스로 작성해보시고, 제 코드([lets-build-interpreter/lib/tokenizer.js](https://github.com/rycont/lets-build-interpreter/blob/main/lib/tokenizer.js))와 비교해보세요.
 
-다음 글: [런타임 작성하기](yaksok-ts-runtime)
+다음 글: [파서 직접 만들어보기](yaksok-ts-parser)
