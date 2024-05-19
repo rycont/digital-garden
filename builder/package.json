@@ -9,7 +9,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "build-deploy": "rm -rf ./src/images && rm ./src/pages/*.md && cp ../*.md ./src/pages && cp -r ../images ./src/images && astro build && astro build"
+    "build-test": "rm -rf ./src/images && rm ./src/pages/*.md && cp ../*.md ./src/pages && cp -r ../images ./src/images && astro build && astro build",
+    "build-deploy": "cp ../*.md ./src/pages && cp -r ../images ./src/images && astro build && astro build"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
