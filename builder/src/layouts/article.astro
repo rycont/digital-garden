@@ -1,6 +1,12 @@
 ---
-const { title } = Astro.props?.content || Astro.props;
+const { title, meta } = Astro.props?.content || Astro.props;
+
 const documentTitle = title ? `${title} | Rycont Garden` : "Rycont Garden";
+const documentMeta =
+  meta || title
+    ? `${title}에 관한 글입니다.`
+    : "Rycont Garden에 오신 것을 환영합니다.";
+
 import LinkedPages from "../components/linked-pages.astro";
 ---
 
@@ -9,17 +15,69 @@ import LinkedPages from "../components/linked-pages.astro";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{documentTitle}</title>
-    <link
-      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/static/woff2/SUIT.css"
-      rel="stylesheet"
-    />
+    <meta name="description" content={documentMeta} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <style is:global>
       @font-face {
+        font-family: "SUIT";
+        font-weight: 100;
+        src: url("/fonts/SUIT-Thin.woff2") format("woff2");
+        font-display: fallback;
+      }
+      @font-face {
+        font-family: "SUIT";
+        font-weight: 200;
+        src: url("/fonts/SUIT-ExtraLight.woff2") format("woff2");
+        font-display: fallback;
+      }
+      @font-face {
+        font-family: "SUIT";
+        font-weight: 300;
+        src: url("/fonts/SUIT-Light.woff2") format("woff2");
+        font-display: fallback;
+      }
+      @font-face {
+        font-family: "SUIT";
+        font-weight: 400;
+        src: url("/fonts/SUIT-Regular.woff2") format("woff2");
+        font-display: fallback;
+      }
+      @font-face {
+        font-family: "SUIT";
+        font-weight: 500;
+        src: url("/fonts/SUIT-Medium.woff2") format("woff2");
+        font-display: fallback;
+      }
+      @font-face {
+        font-family: "SUIT";
+        font-weight: 600;
+        src: url("/fonts/SUIT-SemiBold.woff2") format("woff2");
+        font-display: fallback;
+      }
+      @font-face {
+        font-family: "SUIT";
+        font-weight: 700;
+        src: url("/fonts/SUIT-Bold.woff2") format("woff2");
+        font-display: fallback;
+      }
+      @font-face {
+        font-family: "SUIT";
+        font-weight: 800;
+        src: url("/fonts/SUIT-ExtraBold.woff2") format("woff2");
+        font-display: fallback;
+      }
+      @font-face {
+        font-family: "SUIT";
+        font-weight: 900;
+        src: url("/fonts/SUIT-Heavy.woff2") format("woff2");
+        font-display: fallback;
+      }
+      @font-face {
         font-family: "D2Coding";
-        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff")
-          format("woff");
+        src: url("/fonts/D2Coding.woff") format("woff");
         font-weight: normal;
         font-style: normal;
+        font-display: fallback;
       }
 
       body {

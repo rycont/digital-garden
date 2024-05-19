@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://postica.app/sitemap-index.xml
