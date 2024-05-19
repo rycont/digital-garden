@@ -64,11 +64,11 @@ layout: ../layouts/article.astro
 }
 
 function extractInternalLinksFromHTML(html: string) {
-  const linkTags = html.match(/<a href="(.+?)">/g);
+  const linkTags = html.match(/href="(.+?)"/g);
   if (!linkTags) return [];
 
   const linkTargets = linkTags
-    .map((link) => link.match(/<a href="(.+?)"/)?.[1])
+    .map((link) => link.match(/href="(.+?)"/)?.[1])
     .filter(Boolean) as string[];
 
   const decodedLinkTargets = linkTargets.map((link) => decodeURI(link));

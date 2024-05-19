@@ -1,7 +1,7 @@
 ---
 let allPages = await Astro.glob("../pages/**/*.{md,mdx}");
 
-let currentPath = traimTrailingSlash(Astro.url.pathname);
+let currentPath = traimTrailingSlash(decodeURI(Astro.url.pathname));
 
 function traimTrailingSlash(path: string) {
   if (path.endsWith("/")) {
