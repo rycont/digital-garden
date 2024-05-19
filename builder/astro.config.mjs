@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import { visit } from "unist-util-visit";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import remarkObsidian from "remark-obsidian";
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,7 +10,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [makeLinkTitle],
   },
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap(), remarkObsidian()],
   output: "static",
 });
 function makeLinkTitle() {

@@ -13,6 +13,9 @@ dependencies:
   astro:
     specifier: ^4.8.4
     version: 4.8.4(@types/node@20.12.12)(typescript@5.4.5)
+  remark-obsidian:
+    specifier: ^1.8.0
+    version: 1.8.0
   typescript:
     specifier: ^5.4.5
     version: 5.4.5
@@ -3507,6 +3510,10 @@ packages:
       micromark-extension-mdxjs: 3.0.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /remark-obsidian@1.8.0:
+    resolution: {integrity: sha512-nzL47ykZubW/ELAetSE8+73BFX8kGO+64//7pYnsEuEUrEz5x4AHP9wYhsceFkfK6oftAyugy1FkPcThhdyD2g==}
     dev: false
 
   /remark-parse@11.0.0:

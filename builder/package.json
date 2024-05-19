@@ -16,6 +16,7 @@
     "@astrojs/mdx": "^3.0.0",
     "@astrojs/sitemap": "^3.1.4",
     "astro": "^4.8.4",
+    "remark-obsidian": "^1.8.0",
     "typescript": "^5.4.5",
     "unist-util-visit": "^5.0.0"
   },

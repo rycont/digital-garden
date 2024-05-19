@@ -44,16 +44,16 @@ function getArticleByLinkTargetURL(
   const mentionedIn = articles.filter((article) => article.links.includes(url));
 
   if (!targetArticle) {
-    //     writeFile(
-    //       `./src/pages/${url}.md`,
-    //       `---
-    // title: ${url}
-    // layout: ../layouts/article.astro
-    // ---
-    // # ${url}
-    // 아직 작성되지 않은 주제입니다.
-    // `
-    //     );
+    writeFile(
+      `./src/pages/${url}.md`,
+      `---
+title: ${url}
+layout: ../layouts/article.astro
+---
+# ${url}
+아직 작성되지 않은 주제입니다.
+    `
+    );
   }
 
   return {
