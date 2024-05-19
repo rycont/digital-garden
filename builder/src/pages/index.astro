@@ -9,9 +9,10 @@ interface Article {
 }
 
 const articleFiles = await Astro.glob("./*.{md,astro}");
+
 const articles: Article[] = articleFiles.map((file) => ({
-  url: file.url.slice(1),
-  title: file.frontmatter.title || file.url.slice(1),
+  url: file.url,
+  title: file.frontmatter.title || file.url,
   content: file.compiledContent(),
 }));
 
@@ -43,18 +44,16 @@ function getArticleByLinkTargetURL(
   const mentionedIn = articles.filter((article) => article.links.includes(url));
 
   if (!targetArticle) {
-    writeFile(
-      `./src/pages/${url}.md`,
-      `---
-title: ${url}
-layout: ../layouts/article.astro
----
-
-# ${url}
-
-아직 작성되지 않은 주제입니다.
-`
-    );
+    //     writeFile(
+    //       `./src/pages/${url}.md`,
+    //       `---
+    // title: ${url}
+    // layout: ../layouts/article.astro
+    // ---
+    // # ${url}
+    // 아직 작성되지 않은 주제입니다.
+    // `
+    //     );
   }
 
   return {
@@ -94,7 +93,7 @@ const sortedWithMentionedLinks = bidirectionalLinkingArticles.sort(
     {
       sortedWithMentionedLinks.map((article) => (
         <li>
-          <a href={"/" + article.url}>
+          <a href={article.url}>
             ({article.mentionedIn.length}회) {article.title}
           </a>
         </li>
