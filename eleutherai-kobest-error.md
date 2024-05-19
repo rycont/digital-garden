@@ -4,7 +4,7 @@ layout: ../layouts/article.astro
 date: 2023-11-30T11:21:55.829Z
 ---
 
-# (번외) EleutherAI의 [](KoBEST) 벤치마크에 대해
+# (번외) EleutherAI의 [[KoBEST]] 벤치마크에 대해
 
 [Cannot reproduce the evaluation score of HellaSwag, WiC · Issue #37 · EleutherAI/polyglot](https://github.com/EleutherAI/polyglot/issues/37)
 
@@ -13,7 +13,7 @@ date: 2023-11-30T11:21:55.829Z
 EleutherAI의 점수 측정에 대한 문의를 GitHub Issue로 남기고 Discord에 그 내용을 공유하였습니다.
 
 > **정한 Rycont**\
-> [](Polyglot) 논문에 제시된 HellaSwag, WiC 태스크의 점수가 재현되지 않는 문제를 발견했습니다. Ko-1.3b 모델로 테스트 하였으며, 자세한 내용은 깃허브에 이슈로 등록해두었습니다.
+> [[Polyglot]] 논문에 제시된 HellaSwag, WiC 태스크의 점수가 재현되지 않는 문제를 발견했습니다. Ko-1.3b 모델로 테스트 하였으며, 자세한 내용은 깃허브에 이슈로 등록해두었습니다.
 
 > 저도 다시 돌려봤는데 **@정한(Rycont)** 님이라 같은 결과가 나오네요. Polyglot-v1 때 논문에 참여하셨던 분들이 더 이상 채널에 안 계신 것 같아서 직접 여쭤보긴 조금 힘 들 것 같긴 합니다
 

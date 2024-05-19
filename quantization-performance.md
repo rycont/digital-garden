@@ -4,9 +4,9 @@ layout: ../layouts/article.astro
 date: 2023-11-27T13:52:32.941Z
 ---
 
-# [](양자화)한 모델의 성능을 평가하기
+# [[양자화]]한 모델의 성능을 평가하기
 
-[](한국어) 능력 평가 지표중 하나인 [KOBEST(Korean Balanced Evaluation of Significant Tasks)](https://arxiv.org/abs/2204.04541)를 이용하여 모델의 성능을 비교해보겠습니다.
+[[한국어]] 능력 평가 지표중 하나인 [KOBEST(Korean Balanced Evaluation of Significant Tasks)](https://arxiv.org/abs/2204.04541)를 이용하여 모델의 성능을 비교해보겠습니다.
 
 간편한 측정을 위해 [EleutherAI의 lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness)라는 프로그램을 사용하겠습니다. 원본 코드는 양자화한 모델을 아직 완벽하게 지원하지 않습니다. 그래서 원본 코드를 조금 수정하여 테스트를 진행하였습니다. 벤치마크에 영향을 미칠만한 부분(프롬프트, 하이퍼파라미터) 등은 일체 수정하지 않았습니다.
 
@@ -14,7 +14,7 @@ date: 2023-11-27T13:52:32.941Z
 
 [fix: keep auto device when 8bit model is loaded · rycont/lm-evaluation-harness@5b0e328](https://github.com/rycont/lm-evaluation-harness/commit/5b0e328218643ba0dbe453053c3379d5726a8205)
 
-**중요: 한국어 평가 데이터셋(KoBEST)는 [](Polyglot)이라는 브랜치에서만 지원합니다. 양자화 지원 코드 수정 또한 해당 브랜치에서 진행했기 때문에, 제 코드를 사용하고자 하신다면 브랜치를 이동해주세요.**
+**중요: 한국어 평가 데이터셋(KoBEST)는 [[Polyglot]]이라는 브랜치에서만 지원합니다. 양자화 지원 코드 수정 또한 해당 브랜치에서 진행했기 때문에, 제 코드를 사용하고자 하신다면 브랜치를 이동해주세요.**
 
 다음과 같은 커맨드로 평가를 수행하였습니다.
 
@@ -29,7 +29,7 @@ python main.py \
    --output_path "./output"
 ```
 
-저는 [](Colab) 환경에서 진행했기 때문에 긴 시간을 IDLE 상태로 둘 수 없어 각 태스크를 하나 하나 실행하였습니다. `--tasks kobest_boolq,kobest_nsmc`와 같이 작성하며 여러 태스크를 한 명령어로 수행할 수 있습니다.
+저는 [[Colab]] 환경에서 진행했기 때문에 긴 시간을 IDLE 상태로 둘 수 없어 각 태스크를 하나 하나 실행하였습니다. `--tasks kobest_boolq,kobest_nsmc`와 같이 작성하며 여러 태스크를 한 명령어로 수행할 수 있습니다.
 
 KoGPT 6B의 평가 자료는 다음 링크에서 인용하였습니다. 비교는 5-shot을 기준으로 하였습니다.
 

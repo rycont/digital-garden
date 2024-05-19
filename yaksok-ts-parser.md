@@ -3,9 +3,10 @@ title: 파서 직접 만들어보기
 layout: ../layouts/article.astro
 date: 2023-12-12T02:12:32.396Z
 ---
+
 # 파서 직접 만들어보기
 
-> 파서(Parser): 토큰과 토큰 사이의 관계를 분석하고, 의미를 포함하여 구조적으로 재조합 합니다. 재조합된 결과를 [](AST)(Abstract Syntax Tree)라고 합니다.
+> 파서(Parser): 토큰과 토큰 사이의 관계를 분석하고, 의미를 포함하여 구조적으로 재조합 합니다. 재조합된 결과를 [[AST]](Abstract Syntax Tree)라고 합니다.
 
 예시코드를 다시 살펴보겠습니다.
 
@@ -61,9 +62,9 @@ date: 2023-12-12T02:12:32.396Z
 
 2. Reduce: 스택에 있는 토큰을 규칙에 따라 합칩니다
 
-   * Reduce는 더 이상 할 수 없을 때까지 반복합니다
+   - Reduce는 더 이상 할 수 없을 때까지 반복합니다
 
-   * 규칙의 길이가 스택보다 짧다면, 스택의 윗 부분에서부터 규칙의 길이만큼의 토큰에만 규칙을 적용합니다
+   - 규칙의 길이가 스택보다 짧다면, 스택의 윗 부분에서부터 규칙의 길이만큼의 토큰에만 규칙을 적용합니다
 
 Shift-Reduce 방식으로 파싱을 진행하는 과정을 살펴보겠습니다.
 
@@ -88,43 +89,43 @@ Shift-Reduce 방식으로 파싱을 진행하는 과정을 살펴보겠습니다
 
 ### 과정
 
-* 스택: `[ StringValue { value: "BMI는" } ]`
+- 스택: `[ StringValue { value: "BMI는" } ]`
 
-* 적용 가능한 규칙: 없음
+- 적용 가능한 규칙: 없음
 
-* **Shift**
-
----
-
-* 스택: `[ StringValue { value: "BMI는" }, Operator { value: "+" } ]`
-
-* 적용 가능한 규칙: 없음
-
-* **Shift**
+- **Shift**
 
 ---
 
-* 스택: `[ StringValue { value: "BMI는" }, Operator { value: "+" }, Variable { value: "BMI" } ]`
+- 스택: `[ StringValue { value: "BMI는" }, Operator { value: "+" } ]`
 
-* 적용 가능한 규칙: 1번 규칙 (`Evaluable`, `Operator`, `Evaluable`은 `BinaryCalculation`으로 합친다)
+- 적용 가능한 규칙: 없음
 
-* **Reduce**
-
----
-
-* 스택: `[ BinaryCalculation { ... } ]`
-
-* 적용 가능한 규칙: 없음
-
-* **Shift**
+- **Shift**
 
 ---
 
-* 스택: `[ BinaryCalculation { ... }, Token { value: "보여주기" } ]`
+- 스택: `[ StringValue { value: "BMI는" }, Operator { value: "+" }, Variable { value: "BMI" } ]`
 
-* 적용 가능한 규칙: 2번 규칙(`Evaluable`, `Token { value: "보여주기" }`는 `Print`로 합친다)
+- 적용 가능한 규칙: 1번 규칙 (`Evaluable`, `Operator`, `Evaluable`은 `BinaryCalculation`으로 합친다)
 
-* **Reduce**
+- **Reduce**
+
+---
+
+- 스택: `[ BinaryCalculation { ... } ]`
+
+- 적용 가능한 규칙: 없음
+
+- **Shift**
+
+---
+
+- 스택: `[ BinaryCalculation { ... }, Token { value: "보여주기" } ]`
+
+- 적용 가능한 규칙: 2번 규칙(`Evaluable`, `Token { value: "보여주기" }`는 `Print`로 합친다)
+
+- **Reduce**
 
 ---
 

@@ -8,9 +8,9 @@ date: 2023-09-01T04:24:37.235Z
 
 ## 프론트엔드 배포
 
-[GitHub](깃허브) Pages는 이제 그만 놓아주어요. [](Vercel), [](Netlify), [](Cloudflare) Pages를 사용한다면 깃허브 저장소에 있는 프론트엔드 코드를 쉽게 배포할 수 있습니다.
+[GitHub](깃허브) Pages는 이제 그만 놓아주어요. [[Vercel]], [[Netlify]], [[Cloudflare]] Pages를 사용한다면 깃허브 저장소에 있는 프론트엔드 코드를 쉽게 배포할 수 있습니다.
 
-- [](React), NextJS, SvelteKit과 같은 빌드툴 / SSR 프레임워크도 사용 가능
+- [[React]], NextJS, SvelteKit과 같은 빌드툴 / SSR 프레임워크도 사용 가능
 
 - 별다른 설정 없이 클릭 몇번 만에 바로 배포 가능
 
@@ -88,45 +88,45 @@ date: 2023-09-01T04:24:37.235Z
 
 ### **Supabase: PostgreSQL와 File Storage 뽑아먹기**
 
-[](Supabase)는 데이터베이스에 보안정책을 직접 설정하여 [](프론트엔드)에서 DB에 안전하게 직접 접근할 수 있도록 하는 서비스임. 그러나 이런 기능을 사용하지 않더라도, Supabase에 가입하면 PostgreSQL 인스턴스 하나를 주기 때문에 일반적인 백엔드용으로 사용해도 좋습니다. File Storage도 주니, 적극적으로 뽑아먹읍시다!
+[[Supabase]]는 데이터베이스에 보안정책을 직접 설정하여 [[프론트엔드]]에서 DB에 안전하게 직접 접근할 수 있도록 하는 서비스임. 그러나 이런 기능을 사용하지 않더라도, Supabase에 가입하면 PostgreSQL 인스턴스 하나를 주기 때문에 일반적인 백엔드용으로 사용해도 좋습니다. File Storage도 주니, 적극적으로 뽑아먹읍시다!
 
 ### PlanetScale: MySQL 뽑아먹기
 
-[](PlanetScale)은 MySQL 데이터베이스의 스키마를 안전하게 구성 / 변경할 수 있도록 DB에 브랜치 형식을 도입한 DBaaS 서비스입니다. 가입하면 [](MySQL) 인스턴스를 하나 주니 뽑아먹으면 됩니다.
+[[PlanetScale]]은 MySQL 데이터베이스의 스키마를 안전하게 구성 / 변경할 수 있도록 DB에 브랜치 형식을 도입한 DBaaS 서비스입니다. 가입하면 [[MySQL]] 인스턴스를 하나 주니 뽑아먹으면 됩니다.
 
 ### Upstash: Redis, Kafka 뽑아먹기
 
-[](Upstash)는 데이터플랫폼 전문 클라우드 서비스입니다. [](Redis)와 [](Kafka) 프리티어를 제공합니다.
+[[Upstash]]는 데이터플랫폼 전문 클라우드 서비스입니다. [[Redis]]와 [[Kafka]] 프리티어를 제공합니다.
 
 ### Browserless: Headless Chromium 뽑아먹기
 
-그럴 일이 얼마나 있을지는 모르겠지만 Browserless라는 솔루션을 이용하면 리모트서버에 있는 headless chromium [](브라우저)를 제어할 수 있습니다.
+그럴 일이 얼마나 있을지는 모르겠지만 Browserless라는 솔루션을 이용하면 리모트서버에 있는 headless chromium [[브라우저]]를 제어할 수 있습니다.
 
 ## 백엔드
 
-### [](Cloudtype)
+### [[Cloudtype]]
 
 한국형 클라우드 서비스입니다. 사용 경험이 훌륭하고 프리티어가 넉넉합니다. 깃허브 레포지토리를 연결하고 빌드, 포트 등을 설정하면 자동으로 배포할 수 있습니다. 서버 접근 속도가 다른 클라우드와는 비교할 수 없을 정도로 빠릅니다. [Dockerfile](Docker)만 있으면 백엔드를 바로 배포할 수 있습니다.
 
-### [](Railway)
+### [[Railway]]
 
-흔히 "백엔드계의 Vercel"이라고 불릴정도로 미려하고 간편한 UI를 자랑하는 클라우드 서비스 입니다. Railway에서도 Dockerfile만 있으면 배포할 수 있습니다. PostgreSQL, Redis와 같은 데이터 플랫폼들도 호스팅하기 때문에, 한 [](클라우드) 안에서 해결할 수 있습니다.
+흔히 "백엔드계의 Vercel"이라고 불릴정도로 미려하고 간편한 UI를 자랑하는 클라우드 서비스 입니다. Railway에서도 Dockerfile만 있으면 배포할 수 있습니다. PostgreSQL, Redis와 같은 데이터 플랫폼들도 호스팅하기 때문에, 한 [[클라우드]] 안에서 해결할 수 있습니다.
 
 Cloudtype과 동일하게 깃허브 레포지토리를 연결하고 빌드, 포트 등을 설정하면 자동으로 배포할 수 있습니다.
 
 ### Oracle Cloud (OCI)
 
-다른 서비스들과는 달리 전통적인 클라우드 서비스입니다. [](Oracle) Cloud의 VM Instance 서비스에서 A1.Flex라는 인스턴스는 성능이 훌륭하면서도 무료인걸로 유명합니다. 24GB의 램과 4코어의 [](ARM) CPU를 제공합니다. 제가 애용합니다.
+다른 서비스들과는 달리 전통적인 클라우드 서비스입니다. [[Oracle]] Cloud의 VM Instance 서비스에서 A1.Flex라는 인스턴스는 성능이 훌륭하면서도 무료인걸로 유명합니다. 24GB의 램과 4코어의 [[ARM]] CPU를 제공합니다. 제가 애용합니다.
 
 ### 서버 더 쉽게 관리하기
 
 도커 컨테이너들을 쉽게 관리할 수 있는 서비스들이 있다면 화내지 않고 서비스를 운영하는데 도움이 됩니다.
 
-- [](CapRover): 도커에 익숙하지 않은 사람도 쉽게 이용할 수 있습니다
+- [[CapRover]]: 도커에 익숙하지 않은 사람도 쉽게 이용할 수 있습니다
 
-- [](Portainer): 저는 포테이토라고 부릅니다. CapRover보다 더 전문적으로 관리할 수 있지만, UI가 복잡하게 느껴질 수 있습니다
+- [[Portainer]]: 저는 포테이토라고 부릅니다. CapRover보다 더 전문적으로 관리할 수 있지만, UI가 복잡하게 느껴질 수 있습니다
 
-- NPM(Nginx Package Manager): [](Nginx) 설정을 GUI로 할 수 있게 도와줍니다
+- NPM(Nginx Package Manager): [[Nginx]] 설정을 GUI로 할 수 있게 도와줍니다
 
 ## Self Hosted Services
 

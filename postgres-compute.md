@@ -16,7 +16,7 @@ date: 2023-06-06T04:32:10.702Z
 
 #### **GENERATED 필드**
 
-[](PostgreSQL)에는 필드에 GENERATED라는 속성을 적용할 수 있다. 이는 일반적인 computed field와 동일한 개념으로, 레코드의 다른 필드를 참조해서 새로운 값을 계산할 수 있다. 코드로는 다음과 같이 표현된다.
+[[PostgreSQL]]에는 필드에 GENERATED라는 속성을 적용할 수 있다. 이는 일반적인 computed field와 동일한 개념으로, 레코드의 다른 필드를 참조해서 새로운 값을 계산할 수 있다. 코드로는 다음과 같이 표현된다.
 
 ```javascript
 CREATE TABLE Books (

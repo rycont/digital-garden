@@ -4,7 +4,7 @@ layout: ../layouts/article.astro
 date: 2023-11-27T13:52:58.844Z
 ---
 
-# 양자화 할 때 [](Transformer)의 내부 동작 살펴보기
+# 양자화 할 때 [[Transformer]]의 내부 동작 살펴보기
 
 1. \`from_pretrained\` 메소드에서 \`load_in_8bit\`를 \`True\`로 설정하여 모델을 로드한다
 

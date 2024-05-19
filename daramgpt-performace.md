@@ -6,7 +6,7 @@ date: 2023-06-07T16:12:38.400Z
 
 # DaramGPT 성능 평가
 
-대조군은 Teacher 모델인 [](KoGPT Trinity)와 가장 널리 사용되고 있는 한국어 생성모델인 [](KoGPT2)로 설정하였습니다.
+대조군은 Teacher 모델인 [[KoGPT Trinity]]와 가장 널리 사용되고 있는 한국어 생성모델인 [[KoGPT2]]로 설정하였습니다.
 
 |            | DarmaGPT( Ours)  | KoGPT2             | KoGPT Trinity                |
 | ---------- | ---------------- | ------------------ | ---------------------------- |
@@ -17,9 +17,9 @@ date: 2023-06-07T16:12:38.400Z
 | Layers     | 4                | 12                 | 24                           |
 | Model Card |                  | skt/kogpt2-base-v2 | skt/ko-gpt-trinity-1.2B-v0.5 |
 
-학습이 끝난 모델의 성능을 측정하기 위해 몇몇 Downstream Task를 학습하였습니다. [](DaramGPT)와 KoGPT2, KoGPT Trinity 세가지 모델을 모두 테스트하고자 하였지만, KoGPT Trinity는 Downstream task를 미세조정할 수 있는 컴퓨팅 성능이 마련되지 않아 기존에 공개되어있던 오피셜 평가지표를 인용하였습니다.
+학습이 끝난 모델의 성능을 측정하기 위해 몇몇 Downstream Task를 학습하였습니다. [[DaramGPT]]와 KoGPT2, KoGPT Trinity 세가지 모델을 모두 테스트하고자 하였지만, KoGPT Trinity는 Downstream task를 미세조정할 수 있는 컴퓨팅 성능이 마련되지 않아 기존에 공개되어있던 오피셜 평가지표를 인용하였습니다.
 
-모델 성능은 [](KoBEST), [](NSMC)로 측정하였습니다. 한 Epoch이 끝날 때 마다 Test set의 점수를 측정하여 가장 높았던 점수를 최종 점수로 선정하였습니다. 하이퍼파라미터는 다음과 같습니다
+모델 성능은 [[KoBEST]], [[NSMC]]로 측정하였습니다. 한 Epoch이 끝날 때 마다 Test set의 점수를 측정하여 가장 높았던 점수를 최종 점수로 선정하였습니다. 하이퍼파라미터는 다음과 같습니다
 
 - Epoch: 20회
 

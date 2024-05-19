@@ -6,7 +6,7 @@ date: 2023-06-09T00:13:35.808Z
 
 # Cloudflare Pages에 Flutter 앱 배포하기
 
-[](Cloudflare) Page는 프론트엔드 프로젝트를 간편하게 배포할 수 있게 도와주는 플랫폼입니다. 빌드 명령어 프리셋으로 [](React), [](Vue) 등 여러 프레임워크를 지원하고 있지만. [](Flutter) Web은 지원되지 않습니다. 다음 Build Command를 통해서 빌드머신에 직접 플러터를 설치하고 실행할 수 있습니다. Build Output Directory는 /build/web로 설정하면 됩니다.
+[[Cloudflare]] Page는 프론트엔드 프로젝트를 간편하게 배포할 수 있게 도와주는 플랫폼입니다. 빌드 명령어 프리셋으로 [[React]], [[Vue]] 등 여러 프레임워크를 지원하고 있지만. [[Flutter]] Web은 지원되지 않습니다. 다음 Build Command를 통해서 빌드머신에 직접 플러터를 설치하고 실행할 수 있습니다. Build Output Directory는 /build/web로 설정하면 됩니다.
 
 ```javascript
 wget "https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.0.5-stable.tar.xz" && tar -xf ./flutter_linux_3.0.5-stable.tar.xz && export PATH="$PATH:`pwd`/flutter/bin" && flutter build web --release
