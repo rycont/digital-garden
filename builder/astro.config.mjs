@@ -2,15 +2,16 @@ import { defineConfig } from "astro/config";
 import { visit } from "unist-util-visit";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import remarkObsidian from "remark-obsidian";
+import wikiLinkPlugin from "remark-wiki-link";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://garden.postica.app",
   markdown: {
-    remarkPlugins: [makeLinkTitle],
+    remarkPlugins: [wikiLinkPlugin, makeLinkTitle],
+    gfm: true,
   },
-  integrations: [mdx(), sitemap(), remarkObsidian()],
+  integrations: [mdx(), sitemap()],
   output: "static",
 });
 function makeLinkTitle() {
