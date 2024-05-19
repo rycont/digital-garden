@@ -1,10 +1,14 @@
 ---
 let allPages = await Astro.glob("../pages/**/*.{md,mdx}");
 
-let currentPath = trimSlash(Astro.url.pathname);
+let currentPath = traimTrailingSlash(Astro.url.pathname);
 
-function trimSlash(path: string) {
-  return path.replace(/^\/|\/$/g, "");
+function traimTrailingSlash(path: string) {
+  if (path.endsWith("/")) {
+    return path.slice(0, -1);
+  }
+
+  return path;
 }
 
 const linkedPages = allPages.filter((page) => {

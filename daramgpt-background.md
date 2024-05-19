@@ -6,7 +6,7 @@ date: 2023-06-07T15:50:22.962Z
 
 # Knowledge Distillation
 
-딥러닝 모델을 압축하는 방법은 Pruning(가지치기), Weight Sharing(가중치 공유), (Knowledge Distillation)[Distillation](지식 증류) 등 여러가지가 있습니다. 그중 본 보고서에서는 Knowledge Distillation을 통해 모델을 압축해보고자 합니다.
+딥러닝 모델을 압축하는 방법은 Pruning(가지치기), Weight Sharing(가중치 공유), [Distillation](Knowledge Distillation)(지식 증류) 등 여러가지가 있습니다. 그중 본 보고서에서는 Knowledge Distillation을 통해 모델을 압축해보고자 합니다.
 
 #### **Knowledge Distillation이란?**
 

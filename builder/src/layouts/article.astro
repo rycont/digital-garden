@@ -96,6 +96,12 @@ import LinkedPages from "../components/linked-pages.astro";
 
       article img {
         max-height: 70vh;
+        width: auto;
+        object-fit: contain;
+      }
+
+      article p:has(> img) {
+        text-align: center;
       }
 
       .astro-code {

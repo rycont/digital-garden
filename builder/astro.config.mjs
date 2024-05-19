@@ -8,7 +8,17 @@ import wikiLinkPlugin from "remark-wiki-link";
 export default defineConfig({
   site: "https://garden.postica.app",
   markdown: {
-    remarkPlugins: [wikiLinkPlugin, makeLinkTitle],
+    remarkPlugins: [
+      [
+        wikiLinkPlugin,
+        {
+          hrefTemplate: (name) => {
+            return "/" + name;
+          },
+        },
+      ],
+      makeLinkTitle,
+    ],
     gfm: true,
   },
   integrations: [mdx(), sitemap()],
