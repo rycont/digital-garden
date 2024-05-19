@@ -7,19 +7,27 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://garden.postica.app",
   markdown: {
-    remarkPlugins: [makeLinkTitle]
+    remarkPlugins: [makeLinkTitle],
   },
   integrations: [mdx(), sitemap()],
-  output: "static"
+  output: "static",
 });
 function makeLinkTitle() {
-  return tree => {
-    visit(tree, "link", node => {
+  return (tree) => {
+    visit(tree, "link", (node) => {
       if (!node.children.length) {
-        node.children = [{
-          type: "text",
-          value: node.url
-        }];
+        node.children = [
+          {
+            type: "text",
+            value: node.url,
+          },
+        ];
+      }
+
+      const isInternalLink = !node.url.includes(":");
+
+      if (isInternalLink) {
+        node.url = `/` + node.url;
       }
     });
   };
