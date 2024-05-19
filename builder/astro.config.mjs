@@ -15,6 +15,7 @@ export default defineConfig({
           hrefTemplate: (name) => {
             return "/" + name;
           },
+          pageResolver: (name) => [name.replace(/ /g, "-").toLowerCase()],
         },
       ],
       makeLinkTitle,

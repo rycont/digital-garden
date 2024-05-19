@@ -1,4 +1,5 @@
 ---
+title: Obsidian
 layout: ../layouts/article.astro
 date: 2024-05-18T00:45:42.317Z
 ---

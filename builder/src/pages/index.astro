@@ -79,9 +79,19 @@ function extractInternalLinksFromHTML(html: string) {
   return internalLinkTargets;
 }
 
-const sortedWithMentionedLinks = bidirectionalLinkingArticles.sort(
-  (a, b) => b.mentionedIn.length - a.mentionedIn.length
+const urlMentioningMap = new Map(
+  bidirectionalLinkingArticles.map((article) => [
+    article.url,
+    article.mentionedIn,
+  ])
 );
+
+const sortedWithMentionedLinks = articles
+  .map((article) => ({
+    ...article,
+    mentionedIn: urlMentioningMap.get(article.url) || [],
+  }))
+  .sort((a, b) => b.mentionedIn.length - a.mentionedIn.length);
 ---
 
 <Layout>
