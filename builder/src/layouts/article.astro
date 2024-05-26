@@ -12,7 +12,15 @@ const documentMeta =
     : "Rycont Garden에 오신 것을 환영합니다.";
 
 const articlePermalink = (Astro.site?.origin || "") + Astro.url.pathname;
-const githubLink = `https://github.com/rycont/digital-garden/blob/main${Astro.url.pathname}.md`;
+const githubLink = `https://github.com/rycont/digital-garden/blob/main${trimTrailingSlash(Astro.url.pathname)}.md`;
+
+function trimTrailingSlash(path: string) {
+  if (path.endsWith("/")) {
+    return path.slice(0, -1);
+  }
+
+  return path;
+}
 
 const mailto = {
   subject: `Reply: ${title}`,
