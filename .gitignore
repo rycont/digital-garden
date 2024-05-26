@@ -26,3 +26,5 @@ builder/.idea/
 .vscode/
 builder/src/pages/*.md
 builder/src/images/
+
+.idx/

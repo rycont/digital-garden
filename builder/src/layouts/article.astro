@@ -1,11 +1,28 @@
 ---
-const { title, meta } = Astro.props?.content || Astro.props;
+let { title, meta } = Astro.props?.content || Astro.props;
+
+if (!title) {
+  title = decodeURI(Astro.url.pathname.slice(1)).split("-").join(" ");
+}
 
 const documentTitle = title ? `${title} | Rycont Garden` : "Rycont Garden";
 const documentMeta =
   meta || title
     ? `${title}에 관한 글입니다.`
     : "Rycont Garden에 오신 것을 환영합니다.";
+
+const articlePermalink = (Astro.site?.origin || "") + Astro.url.pathname;
+const githubLink = `https://github.com/rycont/digital-garden/blob/main${Astro.url.pathname}.md`;
+
+const mailto = {
+  subject: `Reply: ${title}`,
+  body: `원본 글: ${articlePermalink}`,
+  to: "rycont@outlook.kr",
+};
+
+const mailToString = `mailto:${mailto.to}?subject=${encodeURIComponent(
+  mailto.subject,
+)}&body=${encodeURIComponent(mailto.body)}`;
 
 import LinkedPages from "../components/linked-pages.astro";
 ---
@@ -155,6 +172,10 @@ import LinkedPages from "../components/linked-pages.astro";
     <article>
       <slot />
     </article>
+    <hr />
+    <a href={mailToString}>댓글 쓰기</a>, <a href={githubLink}
+      >GitHub에서 보기</a
+    >
     <hr />
     <LinkedPages />
     <hr />
