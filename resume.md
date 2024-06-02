@@ -96,7 +96,7 @@ date: 2023-07-30T13:27:38.561Z
   2022\.09 / 개인연구\
   [[DaramGPT]]
 
-- **Icyfist: In-context Few Shot Text Style Transfer Architecture with Combined LLMs**
+- **Icyfist: In-context Few Shot Text Style Transfer Architecture with Combined [[LLM]]s**
 
   > [[언어모델]]에서 몇 개의 문체 예시만으로 대상 문장에 문체를 전이하는 모델 구조를 제안합니다. Non parallel few shot으로 In-context Inference가 가능하기 때문에, 개개인의 문체를 모사하는 개인화된 온디바이스 자동응답기를 개발하거나, 혹은 페르소나 대화에서 문체를 유지하는데 사용할 수 있습니다. 모델 구현에는 사전학습된 한국어 BART와 GPT를 사용하였습니다.
 

@@ -12,7 +12,7 @@ date: 2023-06-09T00:22:08.910Z
 >
 > - [\[Intro\] 딥러닝 경량화 모델 방법론 소개](https://computistics.tistory.com/22)
 
-[[양자화]]는 딥러닝 모델을 경량화하는 방법중 하나입니다. [[Huggingface]]의 [Transformers](transformer) 라이브러리가 제공하는 툴킷을 사용하면 Huggingface에 업로드된 모델을 간편하게 양자화할 수 있습니다. 이번 글에서는 [카카오브레인의 KoGPT 6B (kakaobrain/kogpt)](https://huggingface.co/kakaobrain/kogpt) 모델을 양자화하고 성능 변화를 알아보겠습니다.
+[[양자화]]는 딥러닝 모델을 경량화하는 방법중 하나입니다. [[Huggingface]]의 [Transformers](transformer) 라이브러리가 제공하는 툴킷을 사용하면 Huggingface에 업로드된 [[LLM:모델]]을 간편하게 양자화할 수 있습니다. 이번 글에서는 [카카오브레인의 KoGPT 6B (kakaobrain/kogpt)](https://huggingface.co/kakaobrain/kogpt) 모델을 양자화하고 성능 변화를 알아보겠습니다.
 
 ### 환경 설정
 
