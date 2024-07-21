@@ -1,6 +1,7 @@
 package main
 
 import (
+	"cmp"
 	"fmt"
 	"garden-builder/functions"
 	"slices"
@@ -25,9 +26,13 @@ func main() {
 		i++
 	}
 
-	slices.Sort(ids)
+	slices.SortFunc(ids, func(i, j string) int {
+		return cmp.Compare(scoreById[j], scoreById[i])
+	})
 
 	for _, id := range ids {
-		fmt.Println(id)
+		fmt.Println(id, scoreById[id])
 	}
+
+	// [TODO]: 점수에 글 길이 반영하기
 }

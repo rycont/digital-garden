@@ -38,7 +38,7 @@ func CalculateRank(graph map[string]types.GraphNode) map[string]float64 {
 				outlinkScore += scores[outlink]
 			}
 
-			nextScores[id] = scores[id] + math.Log(inlinkScore+outlinkScore)
+			nextScores[id] = scores[id] + math.Log(inlinkScore+outlinkScore+10)
 		}
 
 		scores = nextScores
