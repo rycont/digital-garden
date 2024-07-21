@@ -39,7 +39,7 @@ date: 2024-04-24T07:31:41.333Z
 | [[GPT 3.5]]      | [[오픈AI]] | 많은 레퍼런스가 있다 |                                                |
 | [[HyperCLOVA]]   | 네이버     | 한국어를 잘 한다     | Context Length가 작다                          |
 | [[Gemini]] Pro   | 구글       | 무료 티어 존재       | 말을 잘 안듣고 환각이 심함                     |
-| [[Cohere:Command-R]]    | Cohere AI  | 무료 티어 존재       | 한국어 답변에 오류문자, 영단어를 섞어서 생성함 |
+| [[Cohere|Command-R]]    | Cohere AI  | 무료 티어 존재       | 한국어 답변에 오류문자, 영단어를 섞어서 생성함 |
 | Claude [[Haiku]] | Anthropic  | 가볍고 똑똑함, 비용  |                                                |
 
 비용이 부담되었기에 무료 티어가 있는 Gemini(구글)와 Command-R(Cohere)을 1순위로 고려했었습니다. 그러나 Gemini는 환각 현상이 너무 심했고, Command-R은 한국어 답변에 오류문자와 영단어를 섞어서 생성하는 오류가 있기에 채택할 수 없었습니다.
