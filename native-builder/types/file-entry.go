@@ -8,6 +8,7 @@ type ArticleFile struct {
 
 type GraphNode struct {
 	Id      string
+	Power   int
 	Outlink []string
 	Inlink  []string
 }

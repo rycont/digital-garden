@@ -6,7 +6,7 @@ import (
 	"slices"
 )
 
-func CalculateRank(graph map[string]types.GraphNode) map[string]float64 {
+func CalculateScore(graph map[string]types.GraphNode) map[string]float64 {
 	scores := make(map[string]float64)
 
 	for id, node := range graph {
@@ -15,8 +15,8 @@ func CalculateRank(graph map[string]types.GraphNode) map[string]float64 {
 
 		inlinkPower = inlinkPower * inlinkPower
 
-		score := float64(inlinkPower) / math.Log(float64(outlinkPower))
-		scores[id] = score
+		initialScore := float64(inlinkPower)/math.Log(float64(outlinkPower)) + float64(node.Power)
+		scores[id] = initialScore
 	}
 
 	for i := 0; i < 5; i++ {

@@ -28,19 +28,10 @@ func CreateGraph(files []types.ArticleFile) map[string]types.GraphNode {
 		len(files),
 	)
 
-	// for _, value := range files {
-	// 	key := value.Id
-
-	// 	graph[key] = types.GraphNode{
-	// 		Id:      value.Id,
-	// 		Outlink: value.Outlink,
-	// 		Inlink:  inlinkMap[value.Id],
-	// 	}
-	// }
-
 	for id, inlinks := range inlinkMap {
 		graph[id] = types.GraphNode{
 			Id:      id,
+			Power:   len(idArticleMap[id].Content) / 800,
 			Outlink: idArticleMap[id].Outlink,
 			Inlink:  inlinks,
 		}

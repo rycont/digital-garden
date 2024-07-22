@@ -16,11 +16,12 @@ func main() {
 	}
 
 	graph := functions.CreateGraph(files)
-	scoreById := functions.CalculateRank(graph)
+	scoreById := functions.CalculateScore(graph)
 
 	ids := make([]string, len(scoreById))
 
 	i := 0
+
 	for id := range scoreById {
 		ids[i] = id
 		i++
@@ -33,6 +34,4 @@ func main() {
 	for _, id := range ids {
 		fmt.Println(id, scoreById[id])
 	}
-
-	// [TODO]: 점수에 글 길이 반영하기
 }
