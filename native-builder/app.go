@@ -6,6 +6,8 @@ import (
 	"garden-builder/utils"
 	"math"
 	"slices"
+
+	cp "github.com/otiai10/copy"
 )
 
 func main() {
@@ -71,5 +73,6 @@ func main() {
 		pages[id] = articlePage
 	}
 
-	utils.SavePages(pages, "../dist")
+	utils.SavePages(pages, "./dist")
+	cp.Copy("./public", "./dist")
 }
