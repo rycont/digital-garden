@@ -119,13 +119,15 @@
             text-align: center;
         }
 
-        .astro-code {
+        pre {
             padding: 1rem;
             font-size: 0.8rem;
             border-radius: 0.2rem;
+            background-color: #f9f9f9;
+            overflow-x: auto;
         }
 
-        .astro-code code {
+        pre code {
             font-family: "D2Coding", monospace;
         }
 

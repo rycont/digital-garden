@@ -39,7 +39,7 @@ func buildArticlePage(id string, articlesMap map[string]types.ArticlePage) strin
 	for i, inlinkId := range article.Inlink {
 		inlinks[i] = types.ArticlePageBuilderInputInlink{
 			Id:    inlinkId,
-			Title: inlinkId,
+			Title: articlesMap[inlinkId].Title,
 			Score: articlesMap[inlinkId].Score,
 		}
 	}
