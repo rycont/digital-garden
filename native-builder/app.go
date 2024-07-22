@@ -2,18 +2,13 @@ package main
 
 import (
 	"cmp"
-	"fmt"
 	"garden-builder/functions"
+	"garden-builder/types"
 	"slices"
 )
 
 func main() {
-	files, err := functions.GetArticleFiles("..")
-
-	if err != nil {
-		fmt.Println("Failed to get list of files")
-		panic(err)
-	}
+	files := functions.GetArticleFiles("..")
 
 	graph := functions.CreateGraph(files)
 	scoreById := functions.CalculateScore(graph)
@@ -31,7 +26,18 @@ func main() {
 		return cmp.Compare(scoreById[j], scoreById[i])
 	})
 
-	for _, id := range ids {
-		fmt.Println(id, scoreById[id])
+	sortedArticles := make([]types.ArticlePage, len(graph))
+
+	for i, id := range ids {
+		file := files[id]
+		sortedArticles[i] = types.ArticlePage{
+			Id:      id,
+			Content: file.Content,
+			Outlink: file.Outlink,
+			Inlink:  graph[id].Inlink,
+			Score:   scoreById[id],
+		}
 	}
+
+	functions.BuildArticleList(sortedArticles)
 }

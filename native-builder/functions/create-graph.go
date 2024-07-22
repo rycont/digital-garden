@@ -4,16 +4,16 @@ import (
 	"garden-builder/types"
 )
 
-func CreateGraph(files []types.ArticleFile) map[string]types.GraphNode {
+func CreateGraph(files map[string]types.ArticleFile) map[string]types.GraphNode {
 	inlinkMap := make(map[string][]string)
 
 	for id := range files {
-		inlinkMap[files[id].Id] = make([]string, 0)
+		inlinkMap[id] = make([]string, 0)
 	}
 
-	for _, file := range files {
+	for id, file := range files {
 		for _, outlink := range file.Outlink {
-			inlinkMap[outlink] = append(inlinkMap[outlink], file.Id)
+			inlinkMap[outlink] = append(inlinkMap[outlink], id)
 		}
 	}
 

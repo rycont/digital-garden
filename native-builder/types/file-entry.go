@@ -12,3 +12,11 @@ type GraphNode struct {
 	Outlink []string
 	Inlink  []string
 }
+
+type ArticlePage struct {
+	Id      string
+	Content string
+	Outlink []string
+	Inlink  []string
+	Score   float64
+}

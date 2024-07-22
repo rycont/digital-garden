@@ -33,22 +33,21 @@ var md = goldmark.New(
 
 func GetArticleFiles(
 	dirPath string,
-) ([]types.ArticleFile, error) {
-
+) map[string]types.ArticleFile {
 	fileNames, err := filepath.Glob(dirPath + "/*.md")
 
 	if err != nil {
 		panic(err)
 	}
 
-	files := make([]types.ArticleFile, len(fileNames))
+	files := make(map[string]types.ArticleFile)
 
 	for _, fileName := range fileNames {
 		file := createArticleNodeFromFileName(fileName)
-		files = append(files, file)
+		files[file.Id] = file
 	}
 
-	return files, nil
+	return files
 }
 
 func createArticleNodeFromFileName(fileName string) types.ArticleFile {
