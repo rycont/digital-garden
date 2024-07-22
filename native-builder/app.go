@@ -38,7 +38,6 @@ func main() {
 			title = id
 		}
 
-		// Score는 소수점 둘째 자리까지만 표시
 		score := math.Floor(scoreById[id]*100) / 100
 
 		sortedArticles[i] = types.ArticlePage{

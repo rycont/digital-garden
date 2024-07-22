@@ -1,6 +1,13 @@
 package utils
 
-import "garden-builder/types"
+import (
+	"garden-builder/types"
+	"net/url"
+)
+
+const email = "rycont@outlook.kr"
+const linkPrefix = "https://garden.postica.app/"
+const sourcePrefix = "https://github.com/rycont/digital-garden/blob/main/"
 
 func CreateArticlePages(
 	articleIdHtmlContentMap map[string]string,
@@ -26,7 +33,20 @@ func articlePagesToLayoutBuilderInput(
 		Content:      htmlContent,
 		Title:        articlePage.Title,
 		Description:  articlePage.Title + "에 관련한 글입니다.",
-		GithubLink:   "https://github.com/rycont/digital-garden",
-		MailToString: "mailto:rycont@outlook.kr",
+		GithubLink:   sourcePrefix + articlePage.Id + ".md",
+		MailToString: createMailtoString(articlePage.Title, articlePage.Id),
 	}
+}
+
+func createMailtoString(
+	artileTitle string,
+	articleId string,
+) string {
+	subject := "Reply: " + artileTitle
+	body := "---\n원본 글: " + linkPrefix + articleId
+
+	subject = url.QueryEscape(subject)
+	body = url.QueryEscape(body)
+
+	return "mailto:" + email + "?subject=" + subject + "&body=" + body
 }
