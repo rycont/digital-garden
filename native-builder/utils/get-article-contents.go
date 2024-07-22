@@ -1,4 +1,4 @@
-package functions
+package utils
 
 import (
 	"bytes"
@@ -16,12 +16,14 @@ import (
 	"github.com/yuin/goldmark/parser"
 	"github.com/yuin/goldmark/renderer/html"
 
+	"go.abhg.dev/goldmark/frontmatter"
 	"go.abhg.dev/goldmark/wikilink"
 )
 
 var md = goldmark.New(
 	goldmark.WithExtensions(extension.GFM, extension.Linkify,
-		&wikilink.Extender{}),
+		&wikilink.Extender{},
+		&frontmatter.Extender{}),
 	goldmark.WithParserOptions(
 		parser.WithAutoHeadingID(),
 	),
@@ -58,17 +60,24 @@ func createArticleNodeFromFileName(fileName string) types.ArticleFile {
 		panic(err)
 	}
 
-	var buf bytes.Buffer
-	if err := md.Convert(content, &buf); err != nil {
+	var htmlBuffer bytes.Buffer
+	ctx := parser.NewContext()
+
+	if err := md.Convert(content, &htmlBuffer, parser.WithContext(ctx)); err != nil {
 		panic(err)
 	}
 
-	htmlContent := buf.String()
+	htmlContent := htmlBuffer.String()
+	frontmatterContent := frontmatter.Get(ctx)
+
+	var fm types.ArticleFrontmatter
+	frontmatterContent.Decode(&fm)
 
 	outlinks := getOutlinksFromHTML(htmlContent)
 
 	file := types.ArticleFile{
 		Id:      TextNormalizer(fileName[3 : len(fileName)-3]),
+		Title:   strings.Trim(fm.Title, " "),
 		Content: htmlContent,
 		Outlink: outlinks,
 	}
@@ -80,9 +89,9 @@ var internalLinkRegex = regexp.MustCompile(`<a href="([^":]+)"`)
 
 func getOutlinksFromHTML(htmlContent string) []string {
 	matches := internalLinkRegex.FindAllStringSubmatch(htmlContent, -1)
-	outlinks := make([]string, len(matches))
+	outlinks := make([]string, 0)
 
-	for i, match := range matches {
+	for _, match := range matches {
 		link := match[1]
 
 		linkExtension := filepath.Ext(link)
@@ -99,12 +108,18 @@ func getOutlinksFromHTML(htmlContent string) []string {
 
 		normalizedLink := TextNormalizer(decodedLink)
 
+		if len(normalizedLink) == 0 {
+			continue
+		}
+
 		if slices.Contains(outlinks, normalizedLink) {
 			continue
 		}
 
-		outlinks[i] = normalizedLink
+		outlinks = append(outlinks, normalizedLink)
 	}
+
+	// Resize slice to remove empty elements
 
 	return outlinks
 }
