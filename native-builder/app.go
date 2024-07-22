@@ -75,4 +75,5 @@ func main() {
 
 	utils.SavePages(pages, "./dist")
 	cp.Copy("./public", "./dist")
+	cp.Copy("../images", "./dist/images")
 }
