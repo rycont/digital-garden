@@ -21,9 +21,20 @@ import (
 	"go.abhg.dev/goldmark/wikilink"
 )
 
+type minifiedResolver struct {
+}
+
+func (minifiedResolver) ResolveWikilink(n *wikilink.Node) ([]byte, error) {
+	modified := "/" + TextNormalizer(string(n.Target)) + ".html"
+
+	return []byte(modified), nil
+}
+
 var md = goldmark.New(
 	goldmark.WithExtensions(extension.GFM, extension.Linkify,
-		&wikilink.Extender{},
+		&wikilink.Extender{
+			Resolver: minifiedResolver{},
+		},
 		&frontmatter.Extender{}),
 	goldmark.WithParserOptions(
 		parser.WithAutoHeadingID(),
