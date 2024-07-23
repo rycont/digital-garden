@@ -13,6 +13,8 @@ func TextNormalizer(text string) string {
 	text = strings.ToLower(text)
 	text = strings.Trim(text, " ")
 	text = strings.Trim(text, "-")
+	text = strings.Trim(text, "/")
+	text = strings.Trim(text, ".")
 
 	return text
 }
