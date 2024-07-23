@@ -11,8 +11,10 @@ require (
 )
 
 require (
+	github.com/tdewolff/minify/v2 v2.20.37 // indirect
+	github.com/tdewolff/parse/v2 v2.7.15 // indirect
 	golang.org/x/sync v0.3.0 // indirect
-	golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8 // indirect
+	golang.org/x/sys v0.16.0 // indirect
 )
 
 require (
