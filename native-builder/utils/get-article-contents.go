@@ -10,6 +10,7 @@ import (
 	"regexp"
 	"slices"
 	"strings"
+	"time"
 
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/extension"
@@ -75,11 +76,24 @@ func createArticleNodeFromFileName(fileName string) types.ArticleFile {
 
 	outlinks := getOutlinksFromHTML(htmlContent)
 
+	var parsedTime time.Time
+
+	if fm.Date != "" {
+		parsedTime, err = time.Parse(time.RFC3339Nano, fm.Date)
+
+		if err != nil {
+			fmt.Println("⛔ Failed to parse date")
+		}
+	} else {
+		fmt.Println("⛔ Date not found in frontmatter")
+	}
+
 	file := types.ArticleFile{
 		Id:      TextNormalizer(fileName[3 : len(fileName)-3]),
 		Title:   strings.Trim(fm.Title, " "),
 		Content: htmlContent,
 		Outlink: outlinks,
+		Lastmod: parsedTime,
 	}
 
 	return file

@@ -1,10 +1,13 @@
 package types
 
+import "time"
+
 type ArticleFile struct {
 	Id      string
 	Title   string
 	Content string
 	Outlink []string
+	Lastmod time.Time
 }
 
 type GraphNode struct {
@@ -21,6 +24,7 @@ type ArticlePage struct {
 	Outlink []string
 	Inlink  []string
 	Score   float64
+	Lastmod time.Time
 }
 
 type ArticleFrontmatter struct {
@@ -46,4 +50,9 @@ type LayoutBuilderInput struct {
 	Title        string
 	MailToString string
 	GithubLink   string
+}
+
+type SitemapItem struct {
+	Id      string
+	Lastmod string
 }

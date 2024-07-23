@@ -6,6 +6,7 @@ import (
 	"garden-builder/utils"
 	"math"
 	"slices"
+	"time"
 
 	cp "github.com/otiai10/copy"
 )
@@ -40,6 +41,10 @@ func main() {
 			title = id
 		}
 
+		if file.Lastmod.IsZero() {
+			file.Lastmod = time.Now()
+		}
+
 		score := math.Floor(scoreById[id]*100) / 100
 
 		sortedArticles[i] = types.ArticlePage{
@@ -49,6 +54,7 @@ func main() {
 			Outlink: file.Outlink,
 			Inlink:  graph[id].Inlink,
 			Score:   score,
+			Lastmod: file.Lastmod,
 		}
 	}
 
@@ -74,6 +80,7 @@ func main() {
 	}
 
 	utils.SavePages(pages, "./dist")
+	utils.CreateSitemapFile(sortedArticles, "./dist")
 	cp.Copy("./public", "./dist")
 	cp.Copy("../images", "./dist/images")
 }
