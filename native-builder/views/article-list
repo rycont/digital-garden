@@ -3,7 +3,7 @@
 <ul>
     {{ range . }}
     <li>
-        <a href="/{{ .Id }}.html">
+        <a href="/{{ .Id }}">
             ({{ .Score }}점) {{ .Title }}
         </a>
     </li>
