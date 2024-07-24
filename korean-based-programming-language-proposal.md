@@ -1,6 +1,5 @@
 ---
 title: 실험적인 "한국어" 기반 프로그래밍 언어의 제안
-layout: ../layouts/article.astro
 date: 2023-12-10T10:13:33.244Z
 ---
 

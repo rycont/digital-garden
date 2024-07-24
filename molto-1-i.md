@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/article.astro
 date: 2024-05-19T05:44:44.351Z
 ---
 

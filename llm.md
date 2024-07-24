@@ -1,6 +1,5 @@
 ---
 title: LLM
-layout: ../layouts/article.astro
 date: 2024-05-18T04:57:49.187Z
 ---
 

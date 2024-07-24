@@ -1,6 +1,5 @@
 ---
 title: 공군 전자계산병 재도전했습니다
-layout: ../layouts/article.astro
 date: 2023-06-11T02:53:55.846Z
 ---
 

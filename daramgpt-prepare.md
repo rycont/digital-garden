@@ -1,6 +1,5 @@
 ---
 title: DaramGPT 학습 준비
-layout: ../layouts/article.astro
 date: 2023-06-07T16:07:12.283Z
 ---
 

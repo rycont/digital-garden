@@ -1,6 +1,5 @@
 ---
 title: "두 번째 겨울: 디미페이를 사용할 수 없는 학생들?"
-layout: ../layouts/article.astro
 date: 2023-06-22T17:13:16.200Z
 ---
 

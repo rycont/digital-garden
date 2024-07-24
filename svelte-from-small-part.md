@@ -1,6 +1,5 @@
 ---
 title: 프레임워크 없이 만든 프론트엔드에 작은 부분부터 Svelte 도입하기
-layout: ../layouts/article.astro
 date: 2024-04-12T05:49:13.793Z
 ---
 

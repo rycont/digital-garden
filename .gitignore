@@ -28,3 +28,5 @@ builder/src/pages/*.md
 builder/src/images/
 
 .idx/
+
+native-builder/dist/*

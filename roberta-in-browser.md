@@ -1,6 +1,5 @@
 ---
 title: 브라우저에서 RoBERTa 실행해보기
-layout: ../layouts/article.astro
 date: 2024-04-02T07:19:54.046Z
 ---
 
@@ -66,7 +65,7 @@ tokenizer.save_pretrained(save_directory)
 
 400MB는 앱의 일부로 배포하기에는 부담스러운 크기입니다. 모델의 크기도 줄이고 추론 속도도 높히려면 [[양자화]]를 수행할 수 있습니다. 다음 코드로 모델을 양자화할 수 있습니다.
 
-> **같이 보기:** [**딥러닝 모델 쉽게 양자화하기**](easy-quantization)
+> **같이 보기:** [[easy-quantization|딥러닝 모델 쉽게 양자화하기]]
 >
 > 양자화는 딥러닝 모델을 경량화하는 방법중 하나입니다. Huggingface의 transformers 라이브러리가 제공하는 툴킷을 사용하면 Huggingface에 업로드된 모델을 간편하게 양자화할 수 있습니다...
 

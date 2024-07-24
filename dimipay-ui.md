@@ -1,6 +1,5 @@
 ---
 title: "디자인에 대한 이야기: 오직 유저만 생각했지만.."
-layout: ../layouts/article.astro
 date: 2023-06-22T17:24:43.608Z
 ---
 

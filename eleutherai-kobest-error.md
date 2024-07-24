@@ -1,6 +1,5 @@
 ---
 title: EleutherAI의 KoBEST 벤치마크에 대해
-layout: ../layouts/article.astro
 date: 2023-11-30T11:21:55.829Z
 ---
 

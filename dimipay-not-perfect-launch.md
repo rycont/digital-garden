@@ -1,6 +1,5 @@
 ---
 title: 반쪽짜리 런칭에 대한 소회
-layout: ../layouts/article.astro
 date: 2023-06-22T17:35:31.870Z
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Knowledge Distillation
-layout: ../layouts/article.astro
 date: 2023-06-07T15:50:22.962Z
 ---
 

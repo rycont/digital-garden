@@ -1,6 +1,5 @@
 ---
 title: 런칭을 못하고 팀을 떠나다
-layout: ../layouts/article.astro
 date: 2023-06-22T17:29:42.471Z
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Tui Grid가 프로덕션 빌드에서만 오류를 낼 때 (Minified React error #130)
-layout: ../layouts/article.astro
 date: 2023-06-16T13:27:05.984Z
 ---
 

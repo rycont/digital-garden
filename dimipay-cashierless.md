@@ -1,6 +1,5 @@
 ---
 title: 어쩌다 무인매점이 되어버렸다
-layout: ../layouts/article.astro
 date: 2023-06-22T17:11:14.857Z
 ---
 

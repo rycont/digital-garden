@@ -1,12 +1,11 @@
 ---
 title: 파서 직접 만들어보기
-layout: ../layouts/article.astro
 date: 2023-12-12T02:12:32.396Z
 ---
 
 # 파서 직접 만들어보기
 
-> 파서(Parser): 토큰과 토큰 사이의 관계를 분석하고, 의미를 포함하여 구조적으로 재조합 합니다. 재조합된 결과를 [[AST]](Abstract Syntax Tree)라고 합니다.
+> 파서(Parser): 토큰과 토큰 사이의 관계를 분석하고, 의미를 포함하여 구조적으로 재조합 합니다. 재조합된 결과를 [[AST|Abstract Syntax Tree]]라고 합니다.
 
 예시코드를 다시 살펴보겠습니다.
 
@@ -145,4 +144,4 @@ Print {
 
 이번에도 직접 작성해보고, 제 코드([lets-build-interpreter/lib/parser.js](https://github.com/rycont/lets-build-interpreter/blob/main/lib/parser.js))와 비교해보시는걸 추천드립니다.
 
-다음 글: [런타임 작성하기](yaksok-ts-runtime)
+다음 글: [[런타임 작성하기|yaksok-ts-runtime]]

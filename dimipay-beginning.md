@@ -1,6 +1,5 @@
 ---
 title: 디미페이 이렇게 시작했습니다
-layout: ../layouts/article.astro
 date: 2023-06-22T17:08:36.818Z
 ---
 

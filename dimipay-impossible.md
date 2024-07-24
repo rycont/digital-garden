@@ -1,6 +1,5 @@
 ---
 title: 디미페이는 불가능했다
-layout: ../layouts/article.astro
 date: 2023-06-22T17:09:27.670Z
 ---
 

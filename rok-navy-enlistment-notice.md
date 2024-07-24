@@ -1,6 +1,5 @@
 ---
 title: 해군 입영통지서가 나왔습니다
-layout: ../layouts/article.astro
 date: 2023-07-30T11:11:10.489Z
 ---
 
