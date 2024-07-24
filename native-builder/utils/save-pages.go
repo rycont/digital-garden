@@ -47,15 +47,19 @@ func savePage(path string, content types.LayoutBuilderInput, directory string) {
 		panic(err)
 	}
 
-	rendered := new(bytes.Buffer)
-	err = layoutTemplate.Execute(rendered, content)
+	useMinify := os.Getenv("GARDEN_NO_MINIFY") != "true"
 
-	minifier.Minify("text/html", file, rendered)
+	if useMinify {
+		rendered := new(bytes.Buffer)
+		err = layoutTemplate.Execute(rendered, content)
+		minifier.Minify("text/html", file, rendered)
+	} else {
+		err = layoutTemplate.Execute(file, content)
+	}
 
 	if err != nil {
 		panic(err)
 	}
-
 	err = file.Close()
 
 	if err != nil {
