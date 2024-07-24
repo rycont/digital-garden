@@ -1,6 +1,5 @@
 ---
 title: 준비하기
-layout: ../layouts/article.astro
 date: 2023-12-12T02:09:45.811Z
 ---
 

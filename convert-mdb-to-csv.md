@@ -1,6 +1,5 @@
 ---
 title: "리눅스에서 .mdb(Microsoft Access) 파일을 CSV로 변환하기"
-layout: ../layouts/article.astro
 date: 2024-06-06T01:14:15.957Z
 ---
 

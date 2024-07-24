@@ -1,6 +1,5 @@
 ---
 title: 수고하셨습니다!
-layout: ../layouts/article.astro
 date: 2023-12-12T02:16:49.082Z
 ---
 

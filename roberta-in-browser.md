@@ -1,6 +1,5 @@
 ---
 title: 브라우저에서 RoBERTa 실행해보기
-layout: ../layouts/article.astro
 date: 2024-04-02T07:19:54.046Z
 ---
 

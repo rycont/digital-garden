@@ -1,6 +1,5 @@
 ---
 title: Baking News
-layout: ../layouts/article.astro
 date: 2024-05-18T04:50:18.61Z
 ---
 

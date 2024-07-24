@@ -1,6 +1,5 @@
 ---
 title: SolidJS에서 WebComponent에 동적으로 Attributes 넘기기
-layout: ../layouts/article.astro
 date: 2024-05-20T07:13:05.921Z
 ---
 

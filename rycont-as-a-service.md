@@ -1,6 +1,5 @@
 ---
 title: 정한 군대보내기
-layout: ../layouts/article.astro
 date: 2023-06-08T03:42:22.105Z
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: 들어가며
-layout: ../layouts/article.astro
 date: 2023-12-12T02:09:00.307Z
 ---
 

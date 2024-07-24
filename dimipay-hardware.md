@@ -1,6 +1,5 @@
 ---
 title: 결제에 사용하는 하드웨어
-layout: ../layouts/article.astro
 date: 2023-06-22T17:26:34.778Z
 ---
 

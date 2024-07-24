@@ -1,6 +1,5 @@
 ---
 title: Few-shot으로 특정 발화자의 문체를 복사하는 언어모델 개발하기
-layout: ../layouts/article.astro
 date: 2023-06-15T14:50:54.323Z
 ---
 

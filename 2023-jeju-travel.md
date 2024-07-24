@@ -1,6 +1,5 @@
 ---
 title: 장마 그리고 제주 여행
-layout: ../layouts/article.astro
 date: 2023-07-14T12:57:43.441Z
 ---
 

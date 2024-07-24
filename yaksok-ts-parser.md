@@ -1,6 +1,5 @@
 ---
 title: 파서 직접 만들어보기
-layout: ../layouts/article.astro
 date: 2023-12-12T02:12:32.396Z
 ---
 

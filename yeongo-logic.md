@@ -1,6 +1,5 @@
 ---
 title: "연고로직: 연고전 프로그래밍 언어"
-layout: ../layouts/article.astro
 date: undefined
 ---
 

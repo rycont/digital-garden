@@ -1,6 +1,5 @@
 ---
 title: 토크나이저와 렉서 만들어보기
-layout: ../layouts/article.astro
 date: 2023-12-12T02:10:51.794Z
 ---
 

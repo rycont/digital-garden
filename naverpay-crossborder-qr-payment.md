@@ -1,6 +1,5 @@
 ---
 title: 네이버페이의 해외QR결제 확장과 동시에 라인페이 호환 종료 예정
-layout: ../layouts/article.astro
 date: 2023-08-26T01:55:43.130Z
 ---
 

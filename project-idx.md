@@ -1,6 +1,5 @@
 ---
 title: Project IDX
-layout: ../layouts/article.astro
 date: 2024-05-25T11:18:27.377Z
 ---
 

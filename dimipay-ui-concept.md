@@ -1,6 +1,5 @@
 ---
 title: "디자인에 대한 이야기: 색다른 디자인을 시도했으나"
-layout: ../layouts/article.astro
 date: 2023-06-22T17:17:11.716Z
 ---
 

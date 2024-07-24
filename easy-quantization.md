@@ -1,6 +1,5 @@
 ---
 title: 딥러닝 모델 쉽게 양자화하기
-layout: ../layouts/article.astro
 date: 2023-06-09T00:22:08.910Z
 ---
 

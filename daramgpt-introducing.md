@@ -1,6 +1,5 @@
 ---
 title: 한국어 GPT 모델 직접 증류해보기
-layout: ../layouts/article.astro
 date: 2023-06-07T15:48:23.880Z
 ---
 

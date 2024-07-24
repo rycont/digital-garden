@@ -1,6 +1,5 @@
 ---
 title: Cloudflare Pages에 Flutter 앱 배포하기
-layout: ../layouts/article.astro
 date: 2023-06-09T00:13:35.808Z
 ---
 

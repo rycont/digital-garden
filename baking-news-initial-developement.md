@@ -1,6 +1,5 @@
 ---
 title: 초개인화 AI 뉴스레터 서비스(Baking News) 개발 수기
-layout: ../layouts/article.astro
 date: 2024-04-24T07:31:41.333Z
 ---
 

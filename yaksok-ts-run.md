@@ -1,6 +1,5 @@
 ---
 title: 코드 실행하기
-layout: ../layouts/article.astro
 date: 2023-12-12T02:15:12.046Z
 ---
 # 코드 실행하기

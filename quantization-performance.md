@@ -1,6 +1,5 @@
 ---
 title: 양자화한 모델의 성능을 평가하기
-layout: ../layouts/article.astro
 date: 2023-11-27T13:52:32.941Z
 ---
 

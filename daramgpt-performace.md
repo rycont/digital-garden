@@ -1,6 +1,5 @@
 ---
 title: DaramGPT 성능 평가
-layout: ../layouts/article.astro
 date: 2023-06-07T16:12:38.400Z
 ---
 

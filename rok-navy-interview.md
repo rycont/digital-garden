@@ -1,6 +1,5 @@
 ---
 title: 해군 전산병 서류합격부터 화상면접까지
-layout: ../layouts/article.astro
 date: 2023-06-22T05:25:51.857Z
 ---
 

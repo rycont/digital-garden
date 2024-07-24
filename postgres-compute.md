@@ -1,6 +1,5 @@
 ---
 title: PostgreSQL에서 INSERT 할 때만 Computed 되는 Field 구현하기
-layout: ../layouts/article.astro
 date: 2023-06-06T04:32:10.702Z
 ---
 

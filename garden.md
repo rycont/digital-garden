@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/article.astro
 date: 2024-05-26T13:48:17.749Z
 title: Garden
 ---

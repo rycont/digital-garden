@@ -1,6 +1,5 @@
 ---
 title: 2023-11-14
-layout: ../layouts/article.astro
 date: 2023-11-14T09:51:08.414Z
 ---
 

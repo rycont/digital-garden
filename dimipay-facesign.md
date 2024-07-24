@@ -1,6 +1,5 @@
 ---
 title: 무작정 네이버에 메일을 써서 얼굴인증 기술을 달라고 한 결과
-layout: ../layouts/article.astro
 date: 2023-06-22T17:13:52.347Z
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Resume
-layout: ../layouts/article.astro
 date: 2023-07-30T13:27:38.561Z
 ---
 

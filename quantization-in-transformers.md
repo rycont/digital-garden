@@ -1,6 +1,5 @@
 ---
 title: 양자화 할 때 Transformer의 내부 동작 살펴보기
-layout: ../layouts/article.astro
 date: 2023-11-27T13:52:58.844Z
 ---
 

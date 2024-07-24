@@ -1,6 +1,5 @@
 ---
 title: 글에서 질문을 만드는 인공지능 (Question Generation with KoBART)
-layout: ../layouts/article.astro
 date: 2023-07-07T17:31:36.793Z
 ---
 

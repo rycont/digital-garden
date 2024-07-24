@@ -1,6 +1,5 @@
 ---
 title: HTML Input의 change 이벤트는 input이 blur될 때 발생한다
-layout: ../layouts/article.astro
 date: 2024-06-07T10:41:05.224Z
 ---
 

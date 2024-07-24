@@ -1,6 +1,5 @@
 ---
 title: 토이프로젝트를 위한 서비스 추천
-layout: ../layouts/article.astro
 date: 2023-09-01T04:24:37.235Z
 ---
 

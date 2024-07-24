@@ -1,6 +1,5 @@
 ---
 title: 디미페이가 뭔데?
-layout: ../layouts/article.astro
 date: 2023-06-22T17:05:26.779Z
 ---
 

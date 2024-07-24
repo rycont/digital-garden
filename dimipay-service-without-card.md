@@ -1,6 +1,5 @@
 ---
 title: 런칭 지연에 대한 압박, 결국 반쪽짜리로 선보인 디미페이
-layout: ../layouts/article.astro
 date: 2023-06-22T17:26:58.106Z
 ---
 

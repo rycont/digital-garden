@@ -1,6 +1,5 @@
 ---
 title: 런타임 작성하기
-layout: ../layouts/article.astro
 date: 2023-12-12T02:14:22.030Z
 ---
 

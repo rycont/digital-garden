@@ -1,6 +1,5 @@
 ---
 title: 2023년 돌아보기
-layout: ../layouts/article.astro
 date: 2023-12-25T05:16:32.319Z
 ---
 
