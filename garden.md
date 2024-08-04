@@ -9,7 +9,7 @@ title: Garden
 
 ## Todos
 
-- [ ] Golang으로 렌더러 재작성하기
-- [ ] 구글 검색에 노출되도록 하기
-- [ ] Pagerank와 유사한 알고리즘 적용하기
+- [ x ] Golang으로 렌더러 재작성하기
+- [ x ] 구글 검색에 노출되도록 하기
+- [ x ] Pagerank와 유사한 알고리즘 적용하기
 - [ ] 댓글 시스템을 뭔가 멋지게 만들어보기(But it should be static)
