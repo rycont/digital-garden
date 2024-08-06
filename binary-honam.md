@@ -1,9 +1,9 @@
 ---
 date: 2024-08-04T09:36:01.685Z
-title: "어이 없음을 위한 엔지니어링 (\"비 내리는 호남선\" 만든 이야기)"
+title: "\"비 내리는 호남선\" 만든 이야기 (어이 없음을 위한 엔지니어링)"
 ---
 
-# 어이 없음을 위한 엔지니어링 (["비 내리는 호남선"](http://binary-honam.postica.app) 만든 이야기)
+# ["비 내리는 호남선"](http://binary-honam.postica.app) 만든 이야기 (어이없음을 위한 엔지니어링)
 
 ![비 내리는 호남선 서비스 스크린샷](/images/binary-honam.postica.app.png)
 
