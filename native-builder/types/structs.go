@@ -18,13 +18,14 @@ type GraphNode struct {
 }
 
 type ArticlePage struct {
-	Id      string
-	Title   string
-	Content string
-	Outlink []string
-	Inlink  []string
-	Score   float64
-	Lastmod time.Time
+	Id          string
+	Title       string
+	Content     string
+	Description string
+	Outlink     []string
+	Inlink      []string
+	Score       float64
+	Lastmod     time.Time
 }
 
 type ArticleFrontmatter struct {
