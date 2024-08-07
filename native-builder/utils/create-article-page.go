@@ -32,7 +32,7 @@ func articlePagesToLayoutBuilderInput(
 	return types.LayoutBuilderInput{
 		Content:      htmlContent,
 		Title:        articlePage.Title,
-		Description:  articlePage.Title + "에 관련한 글입니다.",
+		Description:  articlePage.Description,
 		GithubLink:   sourcePrefix + articlePage.Id + ".md",
 		MailToString: createMailtoString(articlePage.Title, articlePage.Id),
 	}

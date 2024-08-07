@@ -6,8 +6,10 @@ import (
 	"garden-builder/utils"
 	"math"
 	"slices"
+	"strings"
 	"time"
 
+	"github.com/microcosm-cc/bluemonday"
 	cp "github.com/otiai10/copy"
 )
 
@@ -31,6 +33,7 @@ func main() {
 	})
 
 	sortedArticles := make([]types.ArticlePage, len(graph))
+	p := bluemonday.StripTagsPolicy().AddSpaceWhenStrippingTag(false)
 
 	for i, id := range ids {
 		file := files[id]
@@ -47,14 +50,27 @@ func main() {
 
 		score := math.Floor(scoreById[id]*100) / 100
 
+		description := p.Sanitize(file.Content)
+		description = strings.ReplaceAll(description, "\n", " ")
+		description = strings.ReplaceAll(description, "  ", " ")
+
+		runeDescription := []rune(description)
+
+		if len(runeDescription) > 150 {
+			runeDescription = runeDescription[:150]
+		}
+
+		description = string(runeDescription)
+
 		sortedArticles[i] = types.ArticlePage{
-			Id:      id,
-			Title:   title,
-			Content: file.Content,
-			Outlink: file.Outlink,
-			Inlink:  graph[id].Inlink,
-			Score:   score,
-			Lastmod: file.Lastmod,
+			Id:          id,
+			Title:       title,
+			Content:     file.Content,
+			Description: description,
+			Outlink:     file.Outlink,
+			Inlink:      graph[id].Inlink,
+			Score:       score,
+			Lastmod:     file.Lastmod,
 		}
 	}
 
