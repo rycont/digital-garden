@@ -3,9 +3,11 @@ title: "비 내리는 호남선 만들면서 가볍게 써내린 노트"
 date: 2024-07-26T13:29:14.170Z
 ---
 
-[rycont/binary-honam on GitHub](https://github.com/rycont/binary-honam)
+# 비 내리는 호남선 만들면서 가볍게 써내린 노트
 
-# 비 내리는 호남선 [binary-honam.postica.app](https://binary-honam.postica.app/)
+이 글은 비 내리는 호남선 프로젝트 개발 과정에서 격식 없이 쓴 글입니다. 프로젝트 개발 회고는 [[binary-honam|"비 내리는 호남선" 만든 이야기 (어이 없음을 위한 엔지니어링)]] 글을 읽어주세요.
+
+---
 
 [[항해]]중이였다. [[목포]]에서 노래 가사 한 구절을 떠올렸다.
 
