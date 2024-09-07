@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 import os
 
 def get_weekly_diff():
-    repo = git.Repo('../..')
+    repo = git.Repo('.')
 
     last_week = datetime.now() - timedelta(days=7)
     commits = list(repo.iter_commits(since=last_week))
