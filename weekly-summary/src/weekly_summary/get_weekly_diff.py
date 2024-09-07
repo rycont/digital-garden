@@ -22,7 +22,7 @@ def get_weekly_diff():
             continue
 
         parsed_diffs.append({
-            "path": diff.a_path,
+            "path": diff.b_path,
             "diff": diff.diff.decode(),
         })
 
