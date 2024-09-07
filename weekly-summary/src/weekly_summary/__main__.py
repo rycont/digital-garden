@@ -1,4 +1,3 @@
-import weekly_summary
-import sys
+import streamlit as st
 
-sys.exit(weekly_summary.main())
+st.title('Uber pickups in NYC')

@@ -27,6 +27,3 @@ def get_weekly_diff():
         })
 
     return parsed_diffs
-
-def main():
-    print(get_weekly_diff())
