@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ .Title }}</title>
     <meta name="description" content="{{ .Description }}" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="stylesheet" href="/style.css">
-</head>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <a href="/">Home</a>
+      <a href="/">Digital Garden by Rycont</a> |
+      <a href="https://tally.so/r/npWOgB" target="_blank">뉴스레터 구독하기</a>
     </header>
     <hr />
     <article>
-        {{ .Content }}
+      {{ .Content }}
     </article>
     <hr />
-    <a href="{{ .MailToString }}">댓글 쓰기</a>, <a href="{{ .GithubLink }}">GitHub에서 보기</a>
+    <a href="{{ .MailToString }}">댓글 쓰기</a>,
+    <a href="{{ .GithubLink }}">GitHub에서 보기</a>
     <hr />
     <footer>
-        <ul>
-            <li>Author: Rycont</li>
-            <li>Mail: <a href="mailto:rycont@outlook.kr">rycont@outlook.kr</a></li>
-            <li><a href="https://github.com/rycont">GitHub</a></li>
-        </ul>
+      <ul>
+        <li>Mail: <a href="mailto:rycont@outlook.kr">rycont@outlook.kr</a></li>
+        <li><a href="https://github.com/rycont">GitHub</a></li>
+      </ul>
 
-        <p>
-            이 사람은 대한민국 해군에 복무중입니다! <a href="https://www.navy.mil.kr/mbshome/mbs/navy/index.do" target="_blank">지금 바로 해군
-                지원하기</a>
-        </p>
+      <p>
+        이 사람은 대한민국 해군에 복무중입니다!
+        <a
+          href="https://www.navy.mil.kr/mbshome/mbs/navy/index.do"
+          target="_blank"
+          >지금 바로 해군 지원하기</a
+        >
+      </p>
     </footer>
-</body>
-
+  </body>
 </html>
