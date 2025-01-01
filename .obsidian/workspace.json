@@ -35,7 +35,8 @@
               "title": "2024-review"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -87,7 +88,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -107,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "review-2023.md",
+                "file": "2024-review.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for review-2023"
+              "title": "Backlinks for 2024-review"
             }
           },
           {
@@ -126,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "review-2023.md",
+                "file": "2024-review.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from review-2023"
+              "title": "Outgoing links from 2024-review"
             }
           },
           {
@@ -153,10 +155,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "review-2023.md"
+                "file": "2024-review.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of review-2023"
+              "title": "Outline of 2024-review"
             }
           }
         ]
@@ -176,15 +178,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f85b9edc0ec079ef",
+  "active": "85e5d148e927ace6",
   "lastOpenFiles": [
+    "review-2023.md",
     "2024-review.md",
     "images/2024-review/gyeon.png",
     "images/2024-review/chat-image-generator.png",
     "images/2024-review/해군창업경진대회.jpg",
     "2024-w21.md",
     "2024-birthday.md",
-    "review-2023.md",
     "images/2024-review/baking-news.png",
     "images/2024-review/caprover.png",
     "images/2024-review/visual-docent.png",
