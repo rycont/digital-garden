@@ -8,15 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b5dd6f8ffe933db5",
+            "id": "32e4ea0d0353485f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2024-w41.md",
+                "file": "review-2023.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "review-2023"
+            }
+          },
+          {
+            "id": "85e5d148e927ace6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2024-review.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2024-review"
             }
           }
         ]
@@ -39,7 +55,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -48,13 +66,15 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "n회차",
+                "query": "우수상",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,7 +82,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -85,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2024-w41.md",
+                "file": "review-2023.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +115,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for review-2023"
             }
           },
           {
@@ -102,10 +126,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2024-w41.md",
+                "file": "review-2023.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from review-2023"
             }
           },
           {
@@ -116,7 +142,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -125,8 +153,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024-w41.md"
-              }
+                "file": "review-2023.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of review-2023"
             }
           }
         ]
@@ -146,26 +176,48 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b5dd6f8ffe933db5",
+  "active": "f85b9edc0ec079ef",
   "lastOpenFiles": [
+    "2024-review.md",
+    "images/2024-review/gyeon.png",
+    "images/2024-review/chat-image-generator.png",
+    "images/2024-review/해군창업경진대회.jpg",
+    "2024-w21.md",
+    "2024-birthday.md",
+    "review-2023.md",
+    "images/2024-review/baking-news.png",
+    "images/2024-review/caprover.png",
+    "images/2024-review/visual-docent.png",
+    "images/2024-review/busy-networks.png",
+    "images/2024-review/office-hour.png",
+    "images/2024-review/binary-honam.png",
+    "images/2024-review/email-client.png",
+    "images/2024-review",
+    "images/새 폴더",
     "2024-w40.md",
-    "N회차.md",
+    "binary-honam.md",
+    "easy-quantization.md",
     "2024-w41.md",
-    "images/2024-w41/token-before-refactor.png",
-    "images/2024-w41/Group 1.png",
-    "Pasted image 20241013223450.png",
-    "images/Pasted image 20241013223348.png",
+    "images/2024-w49",
+    "images/2024-w48",
+    "images/2024-w47",
+    "images/2024-birthday",
+    "healthy-network-distributed.md",
+    "gyeon-pricing-optimization.md",
+    "2024-w49.md",
+    "2024-w48.md",
+    "2024-w47.md",
+    "2024-w46.md",
+    "2024-w45.md",
+    "2024-w44.md",
+    "2024-w43.md",
+    "2024-w42.md",
+    "2024-w39.md",
+    "N회차.md",
     "images/2024-w41/open.url",
     "images/2024-w41",
-    "images/새 폴더",
     "2024-w37.md",
-    "images/ets-congrats-towel-design.png",
     "2024-w38.md",
-    "images/csatness-update-message.png",
-    "csatness-update-message.png",
-    "Pasted image 20240914164142.png",
-    "images/neis-spellcheck-metric-off-season.png",
-    "images/neis-spellcheck-metric-peak-season.png",
     "2024-w36.md",
     "2024-w35.md",
     "주간정리.md"
