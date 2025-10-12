@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "870402e643c9dc73",
+        "id": "8806cd9fafbfe641",
         "type": "tabs",
         "children": [
           {
-            "id": "49b1c6d848bbcde0",
+            "id": "8d224ef3eb09b170",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": ".obsidian/plugins/obsidian-git/styles.css",
-                "bFile": ".obsidian/plugins/obsidian-git/styles.css",
-                "aRef": ""
+                "file": "2025-10-12.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: styles.css"
+              "icon": "lucide-file",
+              "title": "2025-10-12"
             }
           }
         ]
@@ -172,12 +172,17 @@
       "templates:템플릿 삽입": false,
       "command-palette:명령어 팔레트 열기": false,
       "bases:새 베이스 생성하기": false,
-      "publish:변경사항 게재": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "49b1c6d848bbcde0",
+  "active": "8d224ef3eb09b170",
   "lastOpenFiles": [
+    "images/20251012_155141 1.heic",
+    "images/20251012_153537.heic",
+    "images/20251012_155141.heic",
+    "images/20251012_150007.heic",
+    "20251012_131648.heic",
+    "2025-10-12.md",
     "Pasted image 20251011222823.png",
     "Pasted image 20251011222707.png",
     "2025-10-11.md",
@@ -217,10 +222,7 @@
     "2024-w42.md",
     "2024-w39.md",
     "N회차.md",
-    "images/2024-w41/open.url",
-    "images/2024-w41",
     "2024-w37.md",
-    "2024-w38.md",
-    "2024-w35.md"
+    "2024-w38.md"
   ]
 }
