@@ -14,7 +14,7 @@ import (
 	"strings"
 
 	"github.com/chai2010/webp"
-	_ "github.com/strukturag/libheif/go/heif" // Import for side-effects (decoder registration)
+	"github.com/gen2brain/heic" // CGo-free HEIC decoder
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/extension"
@@ -51,18 +51,14 @@ func init() {
 	)
 }
 
-// isImageEmbed checks if a wikilink node should be treated as an image embed.
-// It checks the parent node kind and also the file extension of the target.
 func isImageEmbed(n *wikilink.Node) bool {
 	if n.Parent() != nil && n.Parent().Kind() == ast.KindImage {
 		return true
 	}
-	// Fallback for custom image types like .heic that goldmark might not recognize as images.
 	target := strings.ToLower(string(n.Target))
 	imageExtensions := []string{".heic", ".jpg", ".jpeg", ".png", ".gif", ".webp"}
 	for _, ext := range imageExtensions {
 		if strings.HasSuffix(target, ext) {
-			// This is an embed link `![[...]]` if the node has no children (no link text).
 			return n.FirstChild() == nil
 		}
 	}
@@ -80,7 +76,6 @@ func (r *combinedResolver) ResolveWikilink(n *wikilink.Node) ([]byte, error) {
 		}
 		return []byte(webpPath), nil
 	}
-	// It's a regular page link
 	pagePath := "/" + TextNormalizer(string(n.Target)) + ".html"
 	return []byte(pagePath), nil
 }
@@ -167,7 +162,13 @@ func convertImageToWebP(srcPath string) (string, error) {
 	}
 	defer srcFile.Close()
 
-	img, _, err := image.Decode(srcFile)
+	var img image.Image
+	// Use the new CGo-free library for HEIC files
+	if strings.ToLower(ext) == ".heic" {
+		img, err = heic.Decode(srcFile)
+	} else {
+		img, _, err = image.Decode(srcFile)
+	}
 	if err != nil {
 		return "", fmt.Errorf("could not decode image %s: %w", fullSrcPath, err)
 	}

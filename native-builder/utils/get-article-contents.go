@@ -41,7 +41,7 @@ func createArticleNodeFromFileName(fileName string) types.ArticleFile {
 		panic(err)
 	}
 
-	// Use the new centralized markdown processing function
+	// Use the new centralized markdown processing function from process-content.go
 	htmlContent, ctx, err := ProcessMarkdown(content)
 	if err != nil {
 		panic(err)
