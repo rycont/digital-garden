@@ -83,7 +83,10 @@ func createArticleNodeFromFileName(fileName string) types.ArticleFile {
 	frontmatterContent := frontmatter.Get(ctx)
 
 	var fm types.ArticleFrontmatter
-	frontmatterContent.Decode(&fm)
+
+	if frontmatterContent != nil {
+		frontmatterContent.Decode(&fm)
+	}
 
 	outlinks := getOutlinksFromHTML(htmlContent)
 
