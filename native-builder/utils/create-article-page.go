@@ -3,6 +3,7 @@ package utils
 import (
 	"garden-builder/types"
 	"net/url"
+	"strings"
 )
 
 const email = "rycont@outlook.kr"
@@ -29,12 +30,19 @@ func articlePagesToLayoutBuilderInput(
 	htmlContent string,
 	articlePage types.ArticlePage,
 ) types.LayoutBuilderInput {
+	content := htmlContent
+	if !articlePage.Lastmod.IsZero() {
+		dateString := "<p>최종 수정: " + articlePage.Lastmod.Format("2006-01-02") + "</p>"
+		content = strings.Replace(content, "</h1>", "</h1>"+dateString, 1)
+	}
+
 	return types.LayoutBuilderInput{
-		Content:      htmlContent,
+		Content:      content,
 		Title:        articlePage.Title,
 		Description:  articlePage.Description,
 		GithubLink:   sourcePrefix + articlePage.Id + ".md",
 		MailToString: createMailtoString(articlePage.Title, articlePage.Id),
+		Lastmod:      articlePage.Lastmod,
 	}
 }
 
