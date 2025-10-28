@@ -1,7 +1,6 @@
 package utils
 
 import (
-	"bytes"
 	"fmt"
 	"garden-builder/types"
 	"net/url"
@@ -12,39 +11,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/yuin/goldmark"
-	"github.com/yuin/goldmark/extension"
-	"github.com/yuin/goldmark/parser"
-	"github.com/yuin/goldmark/renderer/html"
-
 	"go.abhg.dev/goldmark/frontmatter"
-	"go.abhg.dev/goldmark/wikilink"
 )
 
-type minifiedResolver struct {
-}
-
-func (minifiedResolver) ResolveWikilink(n *wikilink.Node) ([]byte, error) {
-	modified := "/" + TextNormalizer(string(n.Target)) + ".html"
-
-	return []byte(modified), nil
-}
-
-var md = goldmark.New(
-	goldmark.WithExtensions(extension.GFM, extension.Linkify,
-		&wikilink.Extender{
-			Resolver: minifiedResolver{},
-		},
-		&frontmatter.Extender{}),
-	goldmark.WithParserOptions(
-		parser.WithAutoHeadingID(),
-	),
-	goldmark.WithRendererOptions(
-		html.WithHardWraps(),
-		html.WithXHTML(),
-	),
-)
-
+// GetArticleFiles finds all markdown files in a directory and processes them.
 func GetArticleFiles(
 	dirPath string,
 ) map[string]types.ArticleFile {
@@ -66,40 +36,45 @@ func GetArticleFiles(
 
 func createArticleNodeFromFileName(fileName string) types.ArticleFile {
 	content, err := os.ReadFile(fileName)
-
 	if err != nil {
 		fmt.Println("⛔ Failed to read file")
 		panic(err)
 	}
 
-	var htmlBuffer bytes.Buffer
-	ctx := parser.NewContext()
-
-	if err := md.Convert(content, &htmlBuffer, parser.WithContext(ctx)); err != nil {
+	// Use the new centralized markdown processing function from process-content.go
+	htmlContent, ctx, err := ProcessMarkdown(content)
+	if err != nil {
 		panic(err)
 	}
 
-	htmlContent := htmlBuffer.String()
+	// Extract frontmatter from the context returned by ProcessMarkdown
 	frontmatterContent := frontmatter.Get(ctx)
 
 	var fm types.ArticleFrontmatter
-
 	if frontmatterContent != nil {
-		frontmatterContent.Decode(&fm)
+		if err := frontmatterContent.Decode(&fm); err != nil {
+			fmt.Printf("⛔ Failed to decode frontmatter for %s: %v\n", fileName, err)
+		}
 	}
 
 	outlinks := getOutlinksFromHTML(htmlContent)
 
 	var parsedTime time.Time
-
 	if fm.Date != "" {
 		parsedTime, err = time.Parse(time.RFC3339Nano, fm.Date)
-
 		if err != nil {
-			fmt.Println("⛔ Failed to parse date")
+			fmt.Printf("⛔ Failed to parse date for %s: %v\n", fileName, err)
+			// Fallback to current time if date parsing fails
+			parsedTime = time.Now()
 		}
 	} else {
-		fmt.Println("⛔ Date not found in frontmatter")
+		// If no date in frontmatter, use file's mod time as a fallback
+		fileInfo, statErr := os.Stat(fileName)
+		if statErr == nil {
+			parsedTime = fileInfo.ModTime()
+		} else {
+			parsedTime = time.Now()
+		}
 	}
 
 	file := types.ArticleFile{
@@ -123,31 +98,27 @@ func getOutlinksFromHTML(htmlContent string) []string {
 		link := match[1]
 
 		linkExtension := filepath.Ext(link)
-
 		if linkExtension == ".html" || linkExtension == ".md" {
-			link = strings.Split(link, ".")[0]
+			// Strip extension for internal linking
+			link = strings.TrimSuffix(link, linkExtension)
 		}
 
 		decodedLink, err := url.QueryUnescape(link)
-
 		if err != nil {
-			panic(err)
+			// Log error but continue
+			fmt.Printf("⛔ Failed to unescape link '%s': %v\n", link, err)
+			continue
 		}
 
 		normalizedLink := TextNormalizer(decodedLink)
-
 		if len(normalizedLink) == 0 {
 			continue
 		}
 
-		if slices.Contains(outlinks, normalizedLink) {
-			continue
+		if !slices.Contains(outlinks, normalizedLink) {
+			outlinks = append(outlinks, normalizedLink)
 		}
-
-		outlinks = append(outlinks, normalizedLink)
 	}
-
-	// Resize slice to remove empty elements
 
 	return outlinks
 }
