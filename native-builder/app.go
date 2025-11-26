@@ -98,5 +98,4 @@ func main() {
 	utils.SavePages(pages, "./dist")
 	utils.CreateSitemapFile(sortedArticles, "./dist")
 	cp.Copy("./public", "./dist")
-	cp.Copy("../images", "./dist/images")
 }
