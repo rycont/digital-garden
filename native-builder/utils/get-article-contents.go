@@ -6,6 +6,7 @@ import (
 	"garden-builder/types"
 	"net/url"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"regexp"
 	"slices"
@@ -90,16 +91,18 @@ func createArticleNodeFromFileName(fileName string) types.ArticleFile {
 
 	outlinks := getOutlinksFromHTML(htmlContent)
 
-	var parsedTime time.Time
+	cmd := exec.Command("git", "log", "-1", "--format=%cI", "--", fileName)
+	output, err := cmd.Output()
+	if err != nil {
+		fmt.Println("⛔ Failed to get last commit date")
+		panic(err)
+	}
 
-	if fm.Date != "" {
-		parsedTime, err = time.Parse(time.RFC3339Nano, fm.Date)
-
-		if err != nil {
-			fmt.Println("⛔ Failed to parse date")
-		}
-	} else {
-		fmt.Println("⛔ Date not found in frontmatter")
+	dateString := strings.TrimSpace(string(output))
+	parsedTime, err := time.Parse(time.RFC3339, dateString)
+	if err != nil {
+		fmt.Println("⛔ Failed to parse date")
+		panic(err)
 	}
 
 	file := types.ArticleFile{
