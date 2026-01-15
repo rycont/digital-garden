@@ -1,6 +1,8 @@
 module garden-builder
 
-go 1.21.11
+go 1.23
+
+toolchain go1.24.3
 
 require (
 	github.com/dcadenas/pagerank v0.0.0-20231224215204-32a14b9c24a7
@@ -12,9 +14,13 @@ require (
 
 require (
 	github.com/aymerick/douceur v0.2.0 // indirect
+	github.com/chai2010/webp v1.4.0 // indirect
+	github.com/ebitengine/purego v0.8.3 // indirect
+	github.com/gen2brain/heic v0.4.5 // indirect
 	github.com/gorilla/css v1.0.1 // indirect
 	github.com/tdewolff/minify/v2 v2.20.37 // indirect
 	github.com/tdewolff/parse/v2 v2.7.15 // indirect
+	github.com/tetratelabs/wazero v1.9.0 // indirect
 	golang.org/x/net v0.26.0 // indirect
 	golang.org/x/sync v0.3.0 // indirect
 	golang.org/x/sys v0.21.0 // indirect
