@@ -15,29 +15,29 @@
       <a href="https://tally.so/r/npWOgB" target="_blank">뉴스레터 구독하기</a>
     </header>
     <hr />
-    <article>
-      {{ .Content }}
-    </article>
+    <article>{{ .Content }}</article>
     <hr />
     <a href="{{ .MailToString }}">댓글 쓰기</a>,
     <a href="{{ .GithubLink }}">GitHub에서 보기</a>
     <hr />
     <footer>
       <ul>
-        <li>Mail: <a href="mailto:rycont@outlook.kr">rycont@outlook.kr</a></li>
+        <li>Mail: <a href="mailto:rycont@outlook.kr">reactdev@kakao.com</a></li>
         <li><a href="https://github.com/rycont">GitHub</a></li>
       </ul>
 
       <p>
-        이 사람은 대한민국 해군에 복무중입니다!
-        <a
-          href="https://www.navy.mil.kr/mbshome/mbs/navy/index.do"
-          target="_blank"
-          >지금 바로 해군 지원하기</a
+        이 사람은 호랑에듀에 재직중입니다!
+        <a href="https://horang.it/" target="_blank"
+          >뭐 하는 회사인지 보러 가기</a
         >
       </p>
     </footer>
 
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="33ee5b79-de4e-4f14-b82e-fc95d430a1ce"></script>
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="33ee5b79-de4e-4f14-b82e-fc95d430a1ce"
+    ></script>
   </body>
 </html>

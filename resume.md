@@ -32,7 +32,7 @@ Manager / Programming Language Engineer\
 
 **Brandazine** 2025.05 \~ 2025.09\
 Product Engineer Intern\
-인턴십: AI 관련 사업 진출을 위한 연구 및 제품 개발. 
+인턴십: AI 관련 사업 진출을 위한 연구 및 제품 개발.
 
 아직 출시되지 않은 제품이기에 구체적인 내용은 비공개입니다.
 
@@ -53,6 +53,7 @@ Product Engineer Intern\
 **리모트캠(at 리모트캠, with 브라이트날리지)** 2023.05 \~ 2023.09\
 UI Designer / 디렉터\
 (아웃소싱) 그룹 단위 원격 카메라 관리 서비스 개발
+
 - **UI Designer**
   - 개인, 가정부터 준 엔터프라이즈급 레벨에 전방위적으로 도입될 수 있는 UI를 설계
   - 원청의 분위기가 보수적이였기에 상용 서비스를 레퍼런스로 삼으면서도, 사용자가 불편하다고 느낄만한 부분은 설득을 거쳐 사용성 개선을 이끔
@@ -157,10 +158,7 @@ FE Dev / UI Designer / Founder / Team Leader\
 
 ## Links
 
-All of my links are also available in my Bento!\
-<https://bento.me/3>
-
-- Email: rycont@outlook.kr
+- Email: reactdev@kakao.com
 - GitHub: <https://github.com/rycont>
 - Figma: <https://www.figma.com/@rycont>
 - Blog: <https://garden.postica.app>
