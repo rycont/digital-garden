@@ -9,7 +9,7 @@ date: 2023-07-30T13:27:38.561Z
 
 ## Interests
 
-- Tech: **FE**, **UI Design**, and NLP beginner🚶
+- Tech: **Programming Language**, **FE**, **UI Design**, and NLP beginner🚶
 
 - Domain: **Payment, Payment, and Payment**
 
@@ -21,7 +21,7 @@ date: 2023-07-30T13:27:38.561Z
 Manager / Programming Language Engineer\
 온라인 코딩 교육 플랫폼 개발 및 운영
 
-- **Pragramming Language Engineer**
+- **Programming Language Engineer**
   - 자체 개발한 교육용 프로그래밍 언어의 컴파일러 및 인터프리터 개발
   - 실제 교육 현장에서 발생하는 문제를 지속적으로 듣고, 현장에서 더 잘 활용될 수 있도록 지속적인 개선중
 - **Frontend Engineer**
@@ -70,7 +70,7 @@ UI Designer / 디렉터\
 
 - **FE Dev**
   - 여러 플랫폼에서 횡단으로 동일한 시각적 경험을 공유할 수 있도록 디자인 시스템을 Private Package로 관리하는 시스템을 구축함
-  - [[Vite]], [[React]], [[TypeScript]], UnoCSS([[Tailwind]]), [[Supabase]], [[Cloudflare]] Pages를 차용
+  - [[Vite]], [[React]], [[TypeScript]], UnoCSS([[Tailwind]]), [[Supabase]], [[Cloudflare]] Pages를 채택
   - CSS Flex와 Auto Layout([[Figma]]) 사이에서 저항 없이 전환할 수 있도록 내부 FE 라이브러리를 개발함
   - 팝업 및 임베드를 다루는 노하우를 축적함
 - **디자이너**
@@ -89,7 +89,7 @@ FE Dev / UI Designer / Founder / Team Leader\
   - 매장 관리 대시보드, 오프라인 결제용 키오스크의 개발에 참여함
   - Vite, React, TypeScript, Stitches / Netlify 사용
   - 자체 디자인시스템을 직접 개발하여 개발 생산성을 극대화
-  - [[아키텍쳐]] 면에서 Collocation과 관심사의 분리에 집중해 확장 가능한 코드를 작성할 수 있도록 노력함
+  - [[아키텍처]] 면에서 Collocation과 관심사의 분리에 집중해 확장 가능한 코드를 작성할 수 있도록 노력함
 - **창립 멤버**
   - 학교 생활의 질을 저하하는 요인을 인지하고, 이를 소프트웨어로 해결할 수 있다고 생각하여 프로젝트를 시작함.
   - 문제 이해를 중심으로 서비스의 구조를 설계하고 현재 상황을 해결할 수 있도록 노력함
@@ -148,10 +148,10 @@ FE Dev / UI Designer / Founder / Team Leader\
 
 ## Education
 
-**컴퓨터공학과** 2023.3 \~ 재학중\
+**컴퓨터공학과** 2023.03 \~ 재학중\
 [[서강대학교]] 공과대학(심화전공)
 
-**웹프로그래밍과** 2020.3 \~ 2023.2\
+**웹프로그래밍과** 2020.03 \~ 2023.02\
 한국디지털미디어고등학교
 
 ---
