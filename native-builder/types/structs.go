@@ -51,6 +51,7 @@ type LayoutBuilderInput struct {
 	Title        string
 	MailToString string
 	GithubLink   string
+	Lastmod      time.Time
 }
 
 type SitemapItem struct {
