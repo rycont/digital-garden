@@ -3,7 +3,6 @@ package utils
 import (
 	"garden-builder/types"
 	"math"
-	"slices"
 )
 
 func CalculateScore(graph map[string]types.GraphNode) map[string]float64 {
@@ -11,7 +10,7 @@ func CalculateScore(graph map[string]types.GraphNode) map[string]float64 {
 
 	for id, node := range graph {
 		inlinkPower := len(node.Inlink) + 1
-		outlinkPower := len(node.Outlink) + 10
+		outlinkPower := len(node.Outlinks) + 10
 
 		inlinkPower = inlinkPower * inlinkPower
 
@@ -27,15 +26,17 @@ func CalculateScore(graph map[string]types.GraphNode) map[string]float64 {
 			outlinkScore := 0.0
 
 			for _, inlink := range node.Inlink {
-				if slices.Contains(node.Outlink, inlink) {
+				_, isBilinked := node.Outlinks[inlink]
+
+				if isBilinked {
 					inlinkScore += scores[inlink] / 3
 				} else {
 					inlinkScore += scores[inlink]
 				}
 			}
 
-			for _, outlink := range node.Outlink {
-				outlinkScore += scores[outlink]
+			for linkId := range node.Outlinks {
+				outlinkScore += scores[linkId]
 			}
 
 			nextScores[id] = scores[id] + math.Log(inlinkScore+outlinkScore+10)

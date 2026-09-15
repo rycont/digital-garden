@@ -8,7 +8,6 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
-	"slices"
 	"strings"
 	"time"
 
@@ -103,24 +102,24 @@ func createArticleNodeFromFileName(fileName string) types.ArticleFile {
 	}
 
 	file := types.ArticleFile{
-		Id:      TextNormalizer(fileName[3 : len(fileName)-3]),
-		Title:   strings.Trim(fm.Title, " "),
-		Content: htmlContent,
-		Outlink: outlinks,
-		Lastmod: parsedTime,
+		Id:       TextNormalizer(fileName[3 : len(fileName)-3]),
+		Title:    strings.Trim(fm.Title, " "),
+		Content:  htmlContent,
+		Outlinks: outlinks,
+		Lastmod:  parsedTime,
 	}
 
 	return file
 }
 
-var internalLinkRegex = regexp.MustCompile(`<a href="([^":]+)"`)
+var internalLinkRegex = regexp.MustCompile(`(<a href="([^":]+)".*?>).*?(<.*?>)`)
 
-func getOutlinksFromHTML(htmlContent string) []string {
-	matches := internalLinkRegex.FindAllStringSubmatch(htmlContent, -1)
-	outlinks := make([]string, 0)
+func getOutlinksFromHTML(htmlContent string) map[string][]types.Outlink {
+	matches := internalLinkRegex.FindAllStringSubmatchIndex(htmlContent, -1)
+	outlinks := make(map[string][]types.Outlink, 0)
 
 	for _, match := range matches {
-		link := match[1]
+		link := htmlContent[match[4]:match[5]]
 
 		linkExtension := filepath.Ext(link)
 
@@ -140,11 +139,12 @@ func getOutlinksFromHTML(htmlContent string) []string {
 			continue
 		}
 
-		if slices.Contains(outlinks, normalizedLink) {
-			continue
+		newOutlink := types.Outlink{
+			Link:  normalizedLink,
+			Range: [4]int{match[2], match[3], match[6], match[7]},
 		}
 
-		outlinks = append(outlinks, normalizedLink)
+		outlinks[newOutlink.Link] = append(outlinks[newOutlink.Link], newOutlink)
 	}
 
 	// Resize slice to remove empty elements

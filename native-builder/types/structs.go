@@ -3,18 +3,23 @@ package types
 import "time"
 
 type ArticleFile struct {
-	Id      string
-	Title   string
-	Content string
-	Outlink []string
-	Lastmod time.Time
+	Id       string
+	Title    string
+	Content  string
+	Outlinks map[string][]Outlink
+	Lastmod  time.Time
 }
 
 type GraphNode struct {
-	Id      string
-	Power   int
-	Outlink []string
-	Inlink  []string
+	Id       string
+	Power    int
+	Outlinks map[string][]Outlink
+	Inlink   []string
+}
+
+type Outlink struct {
+	Link  string
+	Range [4]int
 }
 
 type ArticlePage struct {
@@ -22,7 +27,7 @@ type ArticlePage struct {
 	Title       string
 	Content     string
 	Description string
-	Outlink     []string
+	Outlinks    map[string][]Outlink
 	Inlink      []string
 	Score       float64
 	Lastmod     time.Time

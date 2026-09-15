@@ -67,7 +67,7 @@ func main() {
 			Title:       title,
 			Content:     file.Content,
 			Description: description,
-			Outlink:     file.Outlink,
+			Outlinks:    file.Outlinks,
 			Inlink:      graph[id].Inlink,
 			Score:       score,
 			Lastmod:     file.Lastmod,
@@ -82,6 +82,7 @@ func main() {
 		idArticlePageMap[article.Id] = article
 	}
 
+	idArticlePageMap = utils.RemoveDeadEndLink(idArticlePageMap)
 	articleIdHtmlContentMap := utils.BuildArticlePages(idArticlePageMap)
 
 	pages := make(map[string]types.LayoutBuilderInput)
