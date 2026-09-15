@@ -84,7 +84,8 @@
 }
 
 body {
-    font-family: "SUIT", "Pretendard", "Pretendard Variable", "FallbackSans",
+    font-family:
+        "SUIT", "Pretendard", "Pretendard Variable", "FallbackSans",
         "BlinkMacSystemFont", system-ui, Roboto, "Helvetica Neue", "Segoe UI",
         "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
@@ -93,6 +94,9 @@ body {
     line-height: 1.5;
     padding: 1rem;
     word-break: keep-all;
+}
+
+article *:not(h1) {
     text-align: justify;
 }
 
