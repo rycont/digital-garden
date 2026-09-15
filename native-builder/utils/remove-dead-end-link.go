@@ -32,7 +32,7 @@ func removeDeadEndLinkPage(id string, idArticlePageMap map[string]types.ArticleP
 				continue
 			}
 
-			isDeadEnd := len(targetArticle.Inlink) == 1
+			isDeadEnd := len(targetArticle.Inlink) == 1 && targetArticle.Content == ""
 			if !isDeadEnd {
 				continue
 			}
