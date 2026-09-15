@@ -22,15 +22,12 @@
     <hr />
     <footer>
       <ul>
-        <li>Mail: <a href="mailto:rycont@outlook.kr">reactdev@kakao.com</a></li>
+        <li>Mail: <a href="mailto:reactdev@kakao.com">reactdev@kakao.com</a></li>
         <li><a href="https://github.com/rycont">GitHub</a></li>
       </ul>
 
       <p>
-        이 사람은 호랑에듀에 재직중입니다!
-        <a href="https://horang.it/" target="_blank"
-          >뭐 하는 회사인지 보러 가기</a
-        >
+        이 사람은 요즘 아무 일도 안 하고 있습니다! 재밌는 소식이 있다면 전해주세요.
       </p>
     </footer>
 
