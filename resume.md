@@ -17,13 +17,13 @@ date: 2023-07-30T13:27:38.561Z
 
 ## Experience
 
-**호랑에듀** 2025.09 \~ 재직중\
+**호랑에듀** 2025.09 \~ 2026.08\
 Manager / Programming Language Engineer\
 온라인 코딩 교육 플랫폼 개발 및 운영
 
 - **Programming Language Engineer**
   - 자체 개발한 교육용 프로그래밍 언어의 컴파일러 및 인터프리터 개발
-  - 실제 교육 현장에서 발생하는 문제를 지속적으로 듣고, 현장에서 더 잘 활용될 수 있도록 지속적인 개선중
+  - 실제 교육 현장에서 발생하는 문제를 지속적으로 듣고, 현장에서 잘 활용될 수 있도록 지속적인 개선
 - **Frontend Engineer**
   - 교육용 웹 IDE 및 LMS 시스템 개발
   - [[Next.js]], [[React]], [[TypeScript]], [[PandaCSS]]를 사용하여 개발
